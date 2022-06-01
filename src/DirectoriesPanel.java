@@ -1,6 +1,7 @@
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 
+@SuppressWarnings("serial")
 public class DirectoriesPanel extends JPanel {
 
 	

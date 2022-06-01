@@ -9,8 +9,6 @@ import java.awt.Dimension;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
-import javax.swing.UIManager;
-
 import jiconfont.swing.IconFontSwing;
 import jiconfont.IconCode;
 import jiconfont.icons.font_awesome.FontAwesome;
@@ -35,7 +33,6 @@ public class DashbordAIP {
 			public void run() {
 				try {
 					DashbordAIP window = new DashbordAIP();
-					UIManager.put("TabbedPane.selected", Color.red);
 					window.frame.setMinimumSize(new Dimension(650, 600));
 					window.frame.setVisible(true);
 				} catch (Exception e) {
@@ -72,7 +69,6 @@ public class DashbordAIP {
 		mainPanel.add(headerPanel, BorderLayout.NORTH);
 		headerPanel.setLayout(new FlowLayout(FlowLayout.RIGHT, 10, 5));
 
-		
 		IconFontSwing.register(FontAwesome.getIconFont());
 		//mode change icon
         Icon iconMode = IconFontSwing.buildIcon((IconCode)FontAwesome.MOON_O, 45.0f, Color.BLACK);
@@ -100,8 +96,6 @@ public class DashbordAIP {
 		tabbedPane.addTab("Directories", null, directoriesPanel, null);
 		//add Performance panel to tabbed pane
 		tabbedPane.addTab("Performance", null, performancePanel, null);
-		
-		
-		
+	
 	}
 }

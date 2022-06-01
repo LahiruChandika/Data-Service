@@ -12,6 +12,7 @@ import javax.swing.JSeparator;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
+@SuppressWarnings("serial")
 public class DashboardPanel extends JPanel {
 	private JTextField textFieldTM;
 	private JTextField textFieldTarget;
@@ -19,7 +20,6 @@ public class DashboardPanel extends JPanel {
 	private JTextField textFieldType;
 	private JTextField textFieldQC;
 	private JTextField textFieldProject;
-//	private AchivmentPanel achivmentPanel;
 	private AchivmentPanel achivmentPanel;
 
 	public DashboardPanel() {

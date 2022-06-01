@@ -1,23 +1,17 @@
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
-import java.util.Locale;
-
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.UIManager;
-
-import org.jfree.chart.JFreeChart;
-import org.jfree.chart.labels.StandardPieSectionLabelGenerator;
-import org.jfree.chart.plot.RingPlot;
-import org.jfree.data.general.PieDataset;
 
 import PerformancePanelPackage.DashboardPanel;
 import jiconfont.IconCode;
 import jiconfont.icons.font_awesome.FontAwesome;
 import jiconfont.swing.IconFontSwing;
 
+@SuppressWarnings("serial")
 public class PerformancePanel extends JPanel {
 	
 	private DashboardPanel dashboardPanel;
@@ -27,7 +21,7 @@ public class PerformancePanel extends JPanel {
 		
 		setLayout(new BorderLayout(0, 0));
 		
-		
+		UIManager.put("TabbedPane.selected", Color.red);
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.LEFT);
 		tabbedPane.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		add(tabbedPane, BorderLayout.CENTER);
@@ -51,8 +45,6 @@ public class PerformancePanel extends JPanel {
 		//My Clips change icon
 		JPanel panelMyClips = new JPanel();
 		ImageIcon iconClips = (ImageIcon) IconFontSwing.buildIcon((IconCode)FontAwesome.YOUTUBE_PLAY, 30.0f, Color.BLACK);
-		tabbedPane.addTab("My Clips", iconClips, panelMyClips, null);
-	
-	}
-	
+		tabbedPane.addTab("My Clips", iconClips, panelMyClips, null);	
+	}	
 }

@@ -1,14 +1,12 @@
 import javax.swing.JPanel;
 import java.awt.GridLayout;
 import java.awt.Image;
-import java.awt.BorderLayout;
 import javax.swing.JToolBar;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import java.awt.Font;
-import javax.swing.JSeparator;
-import javax.swing.SwingConstants;
 
+@SuppressWarnings("serial")
 public class NavBar extends JPanel {
 
 	public NavBar() {
