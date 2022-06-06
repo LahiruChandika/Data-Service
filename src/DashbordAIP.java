@@ -9,6 +9,11 @@ import java.awt.Dimension;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
+import javax.swing.UIManager;
+
+import com.formdev.flatlaf.FlatDarkLaf;
+import com.formdev.flatlaf.FlatLightLaf;
+
 import jiconfont.swing.IconFontSwing;
 import jiconfont.IconCode;
 import jiconfont.icons.font_awesome.FontAwesome;
@@ -17,6 +22,7 @@ import java.awt.FlowLayout;
 import java.awt.Font;
 
 import javax.swing.JTabbedPane;
+import javax.swing.LookAndFeel;
 
 public class DashbordAIP {
 
@@ -32,6 +38,8 @@ public class DashbordAIP {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
+					//Look and feel
+					UIManager.setLookAndFeel((LookAndFeel)new FlatLightLaf()); 
 					DashbordAIP window = new DashbordAIP();
 					window.frame.setMinimumSize(new Dimension(650, 600));
 					window.frame.setVisible(true);
