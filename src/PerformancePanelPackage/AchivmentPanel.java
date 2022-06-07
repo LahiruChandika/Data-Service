@@ -110,7 +110,6 @@ private AchivmentDataPanel dataPanel;
 		//add data panel
 		GridBagConstraints gbc_panel = new GridBagConstraints();
 		gbc_panel.insets = new Insets(0, 0, 5, 5);
-		gbc_panel.fill = GridBagConstraints.BOTH;
 		gbc_panel.gridx = 4;
 		gbc_panel.gridy = 4;
 		add(dataPanel, gbc_panel);
