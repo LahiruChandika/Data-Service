@@ -10,6 +10,7 @@ import javax.swing.JSeparator;
 import javax.swing.SwingConstants;
 import javax.swing.JCheckBox;
 
+@SuppressWarnings("serial")
 public class AchivmentDataPanel extends JPanel {
 
 	

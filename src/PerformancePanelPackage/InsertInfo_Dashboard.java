@@ -12,8 +12,7 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
 
-import javax.swing.JLabel;
-
+@SuppressWarnings("serial")
 public class InsertInfo_Dashboard extends JPanel {
 	
 	private ProjectInfoPanel projectInfoPanel;

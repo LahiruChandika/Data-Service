@@ -10,6 +10,7 @@ import javax.swing.JPanel;
 import javax.swing.JSeparator;
 import javax.swing.JTextField;
 
+@SuppressWarnings("serial")
 public class AlocatedAdminsPanel extends JPanel {
 	private JTextField textField;
 	private JTextField textField_1;

@@ -9,6 +9,7 @@ import java.awt.Insets;
 import javax.swing.JTextField;
 import java.awt.Font;
 
+@SuppressWarnings("serial")
 public class ProjectInfoPanel extends JPanel {
 	private JTextField textField;
 	private JTextField textField_1;

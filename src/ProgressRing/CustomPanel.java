@@ -12,6 +12,7 @@ import java.awt.geom.Ellipse2D;
 import java.awt.geom.Rectangle2D;
 import javax.swing.JPanel;
 
+@SuppressWarnings("serial")
 public class CustomPanel extends JPanel {
 	
 	int progress = 0;
@@ -95,11 +96,9 @@ public class CustomPanel extends JPanel {
 		FontMetrics fm = g2.getFontMetrics();
 		Rectangle2D r = fm.getStringBounds(progress+"%", g);
 		int x = (0-(int)r.getWidth())/2;
-		int y = (0-(int)r.getHeight())/2;
-		g2.drawString(progress+"%", 0, 0);
-		
-		
-		
+		int y = (0-(int)r.getHeight())/2 + fm.getAscent();
+		g2.drawString(progress+"%", x, y);
+
 	}
 	
 	public interface ProgressBarInterface{

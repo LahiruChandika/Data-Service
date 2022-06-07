@@ -1,7 +1,6 @@
 package PerformancePanelPackage;
 
 import javax.swing.JPanel;
-import javax.swing.AbstractAction;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import java.awt.GridBagLayout;
@@ -147,14 +146,6 @@ private AchivmentDataPanel dataPanel;
 				bt_run.setVisible(false);
 			}
 		}).start();
-	}
-	private class SwingAction extends AbstractAction {
-		public SwingAction() {
-			putValue(NAME, "SwingAction");
-			putValue(SHORT_DESCRIPTION, "Some short description");
-		}
-		public void actionPerformed(ActionEvent e) {
-		}
 	}
 
 }

@@ -10,6 +10,7 @@ import java.awt.Font;
 import java.awt.Color;
 import javax.swing.SwingConstants;
 
+@SuppressWarnings("serial")
 public class DaysPanel extends JPanel {
 
 	
