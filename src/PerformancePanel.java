@@ -36,7 +36,7 @@ public class PerformancePanel extends JPanel {
 		IconFontSwing.register(FontAwesome.getIconFont());
 		//add DashbboardPanel and Icon
         ImageIcon iconDash = (ImageIcon) IconFontSwing.buildIcon((IconCode)FontAwesome.TH_LARGE, 30.0f, Color.BLACK);
-		tabbedPane.addTab("Dashboard", iconDash, dashboardPanel, null);
+		tabbedPane.addTab("Dashboard  ", iconDash, dashboardPanel, null);
 		
 		JSeparator separator = new JSeparator();
 		separator.setOrientation(SwingConstants.VERTICAL);
@@ -68,17 +68,17 @@ public class PerformancePanel extends JPanel {
 		//History change icon
 		JPanel panelHistory = new JPanel();
 		ImageIcon iconHistory = (ImageIcon) IconFontSwing.buildIcon((IconCode)FontAwesome.HISTORY, 30.0f, Color.BLACK);
-		tabbedPane.addTab("History", iconHistory, panelHistory, null);
+		tabbedPane.addTab("History  ", iconHistory, panelHistory, null);
 				
 				
 		//My Plans change icon
 		JPanel panelMyPlans = new JPanel();
 		ImageIcon iconPlans = (ImageIcon) IconFontSwing.buildIcon((IconCode)FontAwesome.LIST, 30.0f, Color.BLACK);
-		tabbedPane.addTab("My Plans", iconPlans, panelMyPlans, null);
+		tabbedPane.addTab("My Plans  ", iconPlans, panelMyPlans, null);
 				
 		//My Clips change icon
 		JPanel panelMyClips = new JPanel();
 		ImageIcon iconClips = (ImageIcon) IconFontSwing.buildIcon((IconCode)FontAwesome.YOUTUBE_PLAY, 30.0f, Color.BLACK);
-		tabbedPane.addTab("My Clips", iconClips, panelMyClips, null);	
+		tabbedPane.addTab("My Clips  ", iconClips, panelMyClips, null);	
 	}	
 }
