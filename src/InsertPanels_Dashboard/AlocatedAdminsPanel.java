@@ -19,9 +19,9 @@ public class AlocatedAdminsPanel extends JPanel {
 
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[]{0, 0, 0, 0, 0};
-		gridBagLayout.rowHeights = new int[]{0, 0, 30, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+		gridBagLayout.rowHeights = new int[]{0, 0, 30, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 		gridBagLayout.columnWeights = new double[]{0.0, 1.0, 0.0, 0.0, Double.MIN_VALUE};
-		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		setLayout(gridBagLayout);
 		
 		
@@ -45,8 +45,7 @@ public class AlocatedAdminsPanel extends JPanel {
 		
 		JSeparator separator_1 = new JSeparator();
 		GridBagConstraints gbc_separator_1 = new GridBagConstraints();
-		gbc_separator_1.gridheight = 14;
-		gbc_separator_1.insets = new Insets(0, 0, 5, 0);
+		gbc_separator_1.gridheight = 10;
 		gbc_separator_1.gridx = 3;
 		gbc_separator_1.gridy = 3;
 		add(separator_1, gbc_separator_1);
@@ -101,7 +100,7 @@ public class AlocatedAdminsPanel extends JPanel {
 		
 		JSeparator separator = new JSeparator();
 		GridBagConstraints gbc_separator = new GridBagConstraints();
-		gbc_separator.insets = new Insets(0, 0, 5, 5);
+		gbc_separator.insets = new Insets(0, 0, 0, 5);
 		gbc_separator.gridx = 1;
 		gbc_separator.gridy = 12;
 		add(separator, gbc_separator);

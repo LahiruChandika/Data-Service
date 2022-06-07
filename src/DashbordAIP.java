@@ -41,7 +41,7 @@ public class DashbordAIP {
 					//Look and feel
 					UIManager.setLookAndFeel((LookAndFeel)new FlatLightLaf()); 
 					DashbordAIP window = new DashbordAIP();
-					window.frame.setMinimumSize(new Dimension(650, 600));
+					window.frame.setMinimumSize(new Dimension(1000, 700));
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();

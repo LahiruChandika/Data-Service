@@ -47,7 +47,6 @@ public class ProgressCircleUI extends BasicProgressBarUI {
 	    g2.fill(area);
 	    g2.dispose();
 	    
-
 	    // Deal with possible text painting
 	    if (progressBar.isStringPainted()) {
 	      paintString(g, b.left, b.top, barRectWidth, barRectHeight, 0, b);
