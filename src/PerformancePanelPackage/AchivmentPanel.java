@@ -1,7 +1,6 @@
 package PerformancePanelPackage;
 
 import javax.swing.JPanel;
-import javax.swing.JButton;
 import javax.swing.JLabel;
 import java.awt.GridBagLayout;
 import javax.swing.JSeparator;
@@ -12,16 +11,13 @@ import javax.swing.SwingConstants;
 import ProgressRing.CustomPanel;
 
 import java.awt.Font;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 
 @SuppressWarnings("serial")
-public class AchivmentPanel extends JPanel implements CustomPanel.ProgressBarInterface {
+public class AchivmentPanel extends JPanel{
 	
 private AchivmentDataPanel dataPanel;
 	
 	private CustomPanel cp;
-	private JButton bt_run;
 
 	
 	public AchivmentPanel() {
@@ -30,7 +26,7 @@ private AchivmentDataPanel dataPanel;
 		
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[]{0, 0, 0, 0, 0, 0, 0, 0};
-		gridBagLayout.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0, 0};
+		gridBagLayout.rowHeights = new int[]{0, 0, 0, 11, 0, 0, 0, 0};
 		gridBagLayout.columnWeights = new double[]{0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, Double.MIN_VALUE};
 		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, Double.MIN_VALUE};
 		setLayout(gridBagLayout);
@@ -60,30 +56,6 @@ private AchivmentDataPanel dataPanel;
 		gbc_separator_5.gridy = 2;
 		add(separator_5, gbc_separator_5);
 		
-		bt_run = new JButton("Start");
-		bt_run.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				new Thread(new Runnable() {
-					@Override
-					public void run() {
-						for (int num = 0; num <= 400; num++) {
-							try {
-								cp.UpdateProgress(num);
-								cp.repaint();
-								Thread.sleep(50);
-							} catch (Exception e) {
-							}
-						}
-					}
-				}).start();
-			}
-		});
-		GridBagConstraints gbc_btnNewButton = new GridBagConstraints();
-		gbc_btnNewButton.insets = new Insets(0, 0, 5, 5);
-		gbc_btnNewButton.gridx = 1;
-		gbc_btnNewButton.gridy = 3;
-		add(bt_run, gbc_btnNewButton);
-		
 		JSeparator separator_3 = new JSeparator();
 		separator_3.setOrientation(SwingConstants.VERTICAL);
 		GridBagConstraints gbc_separator_3 = new GridBagConstraints();
@@ -104,10 +76,10 @@ private AchivmentDataPanel dataPanel;
 		cp.setVisible(true);
 		add(cp, gbc_panel_1);
 				
-		cp.pbr=this;
 		
 		//add data panel
 		GridBagConstraints gbc_panel = new GridBagConstraints();
+		gbc_panel.anchor = GridBagConstraints.WEST;
 		gbc_panel.insets = new Insets(0, 0, 5, 5);
 		gbc_panel.gridx = 4;
 		gbc_panel.gridy = 4;
@@ -136,16 +108,6 @@ private AchivmentDataPanel dataPanel;
 		gbc_separator.gridy = 6;
 		add(separator, gbc_separator);
 
-	}
-	
-	@Override
-	public void OnProgressComplete() {
-		new Thread(new Runnable() {
-			@Override
-			public void run() {
-				bt_run.setVisible(false);
-			}
-		}).start();
 	}
 
 }

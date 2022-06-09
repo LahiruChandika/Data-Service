@@ -7,6 +7,7 @@ import javax.swing.JTabbedPane;
 import javax.swing.UIManager;
 
 import PerformancePanelPackage.DashboardPanel;
+import PerformancePanelPackage.HistoryPanel;
 import jiconfont.IconCode;
 import jiconfont.icons.font_awesome.FontAwesome;
 import jiconfont.swing.IconFontSwing;
@@ -20,9 +21,12 @@ import java.awt.GridBagLayout;
 public class PerformancePanel extends JPanel {
 	
 	private DashboardPanel dashboardPanel;
+	private HistoryPanel historyPanel;
 
 	public PerformancePanel() {
 		dashboardPanel = new DashboardPanel();
+		historyPanel = new HistoryPanel();
+		
 		GridBagLayout gridBagLayout = (GridBagLayout) dashboardPanel.getLayout();
 		gridBagLayout.columnWidths = new int[]{0, 0, 0, 0, 0, 0, 0, -5};
 		
@@ -66,9 +70,9 @@ public class PerformancePanel extends JPanel {
 		dashboardPanel.add(separator_1, gbc_separator_1);
 		
 		//History change icon
-		JPanel panelHistory = new JPanel();
+//		JPanel panelHistory = new JPanel();
 		ImageIcon iconHistory = (ImageIcon) IconFontSwing.buildIcon((IconCode)FontAwesome.HISTORY, 30.0f, Color.BLACK);
-		tabbedPane.addTab("History  ", iconHistory, panelHistory, null);
+		tabbedPane.addTab("History  ", iconHistory, historyPanel, null);
 				
 				
 		//My Plans change icon

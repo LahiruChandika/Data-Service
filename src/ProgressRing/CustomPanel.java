@@ -10,98 +10,89 @@ import java.awt.RenderingHints;
 import java.awt.geom.Arc2D;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.Rectangle2D;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ListIterator;
 import javax.swing.JPanel;
 
 @SuppressWarnings("serial")
 public class CustomPanel extends JPanel {
 	
-	int progress = 0;
-	int progress1 = 0;
+	int progress = 350;
 	int value = 0;
-	public ProgressBarInterface pbr;
+	Arc2D.Float arc;
+	int progress1=0;
+	int index = -1;
+	int remi = 0;
 	
-	public void UpdateProgress(int progress_value) {
-		progress = progress_value;
-		if (progress==100) {
-			pbr.OnProgressComplete();
-		}
-	}
-
+	
 	public void paint(Graphics g) {
 		super.paint(g);
-		Graphics2D g2=(Graphics2D)g;
+	
+		int c = (progress/100) + 1; //calculate ring count
+		
+		//Color Array list
+		Color[] stColr = {Color.red,Color.green,Color.ORANGE,Color.blue,Color.pink,Color.cyan, Color.yellow};
+		
+		//create array list to add arcs
+		List<String> arcList = new ArrayList<String>();
+		for (int i = 1; i <= c; i++) {
+			arcList.add(new String("arc" + i));
+			index++; // for select colors form color array list			
+		}
+
+		Graphics2D g2=(Graphics2D)g;	
 		g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 		g2.translate(this.getWidth()/2, this.getHeight()/2);
-		g2.rotate(Math.toRadians(270));
-		Arc2D.Float arc = new Arc2D.Float(Arc2D.PIE);
-		Arc2D.Float arc2 = new Arc2D.Float(Arc2D.PIE);//arc2
-		Arc2D.Float arc3 = new Arc2D.Float(Arc2D.PIE);//arc3
-		Arc2D.Float arc4 = new Arc2D.Float(Arc2D.PIE);//arc4
+		g2.rotate(Math.toRadians(90));
+	
+		progress1 = progress;
+		int ii = 0; //for calculate arc sizes.
 		
-		Ellipse2D circle = new Ellipse2D.Float(0,0,110,110);
+		//iterate array list backward
+		ListIterator<String> listIter = arcList.listIterator(arcList.size());
+		while (listIter.hasPrevious()) {
+
+		    String prev = listIter.previous(); 
+		    arc = new Arc2D.Float(Arc2D.PIE);
+
+		    arc.setFrameFromCenter(new Point(0,0), new Point(150-ii,150-ii)); //define arc
+		    ii=ii+15;
+		    
+		    arc.setAngleStart(0);//define arc start angle
 		
-		arc4.setFrameFromCenter(new Point(0,0), new Point(150,150));//arc4
-		arc3.setFrameFromCenter(new Point(0,0), new Point(140,140));//arc3
-		arc2.setFrameFromCenter(new Point(0,0), new Point(130,130));//arc2
-		arc.setFrameFromCenter(new Point(0,0), new Point(120,120));
-		
-		circle.setFrameFromCenter(new Point(0,0), new Point(110,110));
-		
-		arc.setAngleStart(1);
-		arc2.setAngleStart(1);
-		arc3.setAngleStart(1);
-		arc4.setAngleStart(1);
-		
-		
-		
-		if (progress<=100) {
-			arc.setAngleExtent(-progress*3.6);//360/100=3.6		
-		}else if(progress<=200) {	
-			arc.setAngleExtent(-360);
-			arc2.setAngleExtent((-progress+100)*3.6);//360/100=3.6//arc2
-		}else if(progress<=300) {	
-			arc.setAngleExtent(-360);
-			arc2.setAngleExtent(-360);
-			arc3.setAngleExtent((-progress+200)*3.6);//360/100=3.6//arc3
-		}else {
-			arc.setAngleExtent(-360);
-			arc2.setAngleExtent(-360);
-			arc3.setAngleExtent(-360);
-			arc4.setAngleExtent((-progress+300)*3.6);//360/100=3.6//arc4
+		    remi = (progress1%100);//calculate reminder for set arc angle
+		    if (remi>0) {
+		    	arc.setAngleExtent(remi*3.6);
+			}else {
+				arc.setAngleExtent(-360);
+				progress1 = progress1 - 100;
+			}
+		    progress1 = progress1-remi;
+		    
+		    //set color from array list
+		    g2.setColor(stColr[index]);
+		    index = index -1;
+			g2.draw(arc);//draw arc
+			g2.fill(arc);//fill arc
 		}
-		
-		g2.setColor(Color.YELLOW);//arc4
-		g2.draw(arc4);//arc4
-		g2.fill(arc4);//arc4
-		
-		g2.setColor(Color.GREEN);//arc3
-		g2.draw(arc3);//arc3
-		g2.fill(arc3);//arc3
-		
-		g2.setColor(Color.BLUE);//arc2
-		g2.draw(arc2);//arc2
-		g2.fill(arc2);//arc2
-		
-		g2.setColor(Color.red);
-		g2.draw(arc);
-		g2.fill(arc);
-		
+
+		//create middle circle
+		Ellipse2D circle = new Ellipse2D.Float(0,0,110,110);
+		circle.setFrameFromCenter(new Point(0,0), new Point(150-ii,150-ii));
 		g2.setColor(Color.WHITE);
 		g2.draw(circle);
 		g2.fill(circle);
 		
 		g2.setColor(Color.red);
-		g2.rotate(Math.toRadians(90));
-		g.setFont(new Font("Verdana",Font.PLAIN,20));
+		g2.rotate(Math.toRadians(270));
+		g.setFont(new Font("Verdana",Font.PLAIN,30));
 		FontMetrics fm = g2.getFontMetrics();
 		Rectangle2D r = fm.getStringBounds(progress+"%", g);
 		int x = (0-(int)r.getWidth())/2;
 		int y = (0-(int)r.getHeight())/2 + fm.getAscent();
-		g2.drawString(progress+"%", x, y);
-
+		g2.drawString(progress+"%", x, y);				
 	}
-	
-	public interface ProgressBarInterface{
-    	public void OnProgressComplete();
-    }
+
+
 }
