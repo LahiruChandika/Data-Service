@@ -1,29 +1,27 @@
 package PerformancePanelPackage;
 
-import javax.swing.JPanel;
-import javax.swing.JSeparator;
-import javax.swing.SwingConstants;
-
-import ProgressRing.CustomPanel;
-import ProgressRing.CustomPanelQuality;
-
 import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
 
 import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JSeparator;
+import javax.swing.SwingConstants;
+
+import ProgressRing.CustomPanelQuality;
 
 @SuppressWarnings("serial")
-public class QualityPanel extends JPanel {
-	
-	private QualityDataPanel qu_dataPanel;
+public class WorkTimePanel extends JPanel{
+
+	private WorktimeDataPanel wrk_dataPanel;
 	private CustomPanelQuality cpQuality;
 
 	
-	public QualityPanel() {
+	public WorkTimePanel() {
 		
-		qu_dataPanel = new QualityDataPanel();
+		wrk_dataPanel = new WorktimeDataPanel();
 		
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[]{0, 0, 0, 0, 0, 0, 0, 0};
@@ -40,7 +38,7 @@ public class QualityPanel extends JPanel {
 		gbc_separator_4.gridy = 0;
 		add(separator_4, gbc_separator_4);
 		
-		JLabel lblNewLabel = new JLabel("Quality");
+		JLabel lblNewLabel = new JLabel("Work Time (hours)");
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 24));
 		GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
 		gbc_lblNewLabel.gridwidth = 3;
@@ -84,7 +82,7 @@ public class QualityPanel extends JPanel {
 		gbc_panel.insets = new Insets(0, 0, 5, 5);
 		gbc_panel.gridx = 4;
 		gbc_panel.gridy = 4;
-		add(qu_dataPanel, gbc_panel);
+		add(wrk_dataPanel, gbc_panel);
 		
 		JSeparator separator_2 = new JSeparator();
 		separator_2.setOrientation(SwingConstants.VERTICAL);
@@ -110,5 +108,5 @@ public class QualityPanel extends JPanel {
 		add(separator, gbc_separator);
 
 	}
-
+	
 }

@@ -15,15 +15,15 @@ import java.awt.Insets;
 import javax.swing.JLabel;
 
 @SuppressWarnings("serial")
-public class QualityPanel extends JPanel {
+public class MyPlane_QualityPanel extends JPanel {
 	
-	private QualityDataPanel qu_dataPanel;
+	private MyPlans_QualityDataPanel myclips_qu_dataPanel;
 	private CustomPanelQuality cpQuality;
 
 	
-	public QualityPanel() {
+	public MyPlane_QualityPanel() {
 		
-		qu_dataPanel = new QualityDataPanel();
+		myclips_qu_dataPanel = new MyPlans_QualityDataPanel();
 		
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[]{0, 0, 0, 0, 0, 0, 0, 0};
@@ -39,15 +39,6 @@ public class QualityPanel extends JPanel {
 		gbc_separator_4.gridx = 2;
 		gbc_separator_4.gridy = 0;
 		add(separator_4, gbc_separator_4);
-		
-		JLabel lblNewLabel = new JLabel("Quality");
-		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 24));
-		GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
-		gbc_lblNewLabel.gridwidth = 3;
-		gbc_lblNewLabel.insets = new Insets(0, 0, 5, 5);
-		gbc_lblNewLabel.gridx = 2;
-		gbc_lblNewLabel.gridy = 1;
-		add(lblNewLabel, gbc_lblNewLabel);
 		
 		JSeparator separator_5 = new JSeparator();
 		GridBagConstraints gbc_separator_5 = new GridBagConstraints();
@@ -84,7 +75,7 @@ public class QualityPanel extends JPanel {
 		gbc_panel.insets = new Insets(0, 0, 5, 5);
 		gbc_panel.gridx = 4;
 		gbc_panel.gridy = 4;
-		add(qu_dataPanel, gbc_panel);
+		add(myclips_qu_dataPanel, gbc_panel);
 		
 		JSeparator separator_2 = new JSeparator();
 		separator_2.setOrientation(SwingConstants.VERTICAL);

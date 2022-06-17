@@ -15,7 +15,7 @@ import java.awt.Font;
 @SuppressWarnings("serial")
 public class AchivmentPanel extends JPanel{
 	
-private AchivmentDataPanel dataPanel;
+	private AchivmentDataPanel dataPanel;
 	
 	private CustomPanel cp;
 
@@ -39,7 +39,7 @@ private AchivmentDataPanel dataPanel;
 		gbc_separator_4.gridy = 0;
 		add(separator_4, gbc_separator_4);
 		
-		JLabel lblNewLabel = new JLabel("Achivement (100%)");
+		JLabel lblNewLabel = new JLabel("Achivement (presentage)");
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 24));
 		GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
 		gbc_lblNewLabel.gridwidth = 3;

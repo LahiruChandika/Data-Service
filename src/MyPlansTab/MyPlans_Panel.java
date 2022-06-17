@@ -1,28 +1,28 @@
-package PerformancePanelPackage;
+package MyPlansTab;
 
+import java.awt.CardLayout;
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JSeparator;
 
+import PerformancePanelPackage.AchivmentPanel;
+import PerformancePanelPackage.InsertInfo_Dashboard;
+import PerformancePanelPackage.QualityPanel;
+import PerformancePanelPackage.WorkTimePanel;
 import jiconfont.IconCode;
 import jiconfont.icons.font_awesome.FontAwesome;
 import jiconfont.swing.IconFontSwing;
 
-import javax.swing.AbstractAction;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.util.HashMap;
-import java.awt.event.ActionEvent;
-import java.awt.CardLayout;
+public class MyPlans_Panel extends JPanel  {
 
-@SuppressWarnings("serial")
-public class DashboardPanel extends JPanel {
 	private InsertInfo_Dashboard insertInfo;
 	private JSeparator separator_2;
 	private JButton btnBack;
@@ -31,9 +31,8 @@ public class DashboardPanel extends JPanel {
 	private AchivmentPanel achivmentPanel;
 	private WorkTimePanel workTimePanel;
 	private JPanel panel_CardLayout;
-	private JPanel panel_2;
 
-	public DashboardPanel() {
+	public MyPlans_Panel() {
 		insertInfo = new InsertInfo_Dashboard();
 		qualityPanel = new QualityPanel();
 		achivmentPanel = new AchivmentPanel();
@@ -127,5 +126,5 @@ public class DashboardPanel extends JPanel {
 		add(separator, gbc_separator);
 
 	}
-
+	
 }

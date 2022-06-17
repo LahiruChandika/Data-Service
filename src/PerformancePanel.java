@@ -8,6 +8,7 @@ import javax.swing.UIManager;
 
 import PerformancePanelPackage.DashboardPanel;
 import PerformancePanelPackage.HistoryPanel;
+import PerformancePanelPackage.MyPlans;
 import jiconfont.IconCode;
 import jiconfont.icons.font_awesome.FontAwesome;
 import jiconfont.swing.IconFontSwing;
@@ -21,11 +22,13 @@ import java.awt.GridBagLayout;
 public class PerformancePanel extends JPanel {
 	
 	private DashboardPanel dashboardPanel;
+	private MyPlans myPlans;
 	private HistoryPanel historyPanel;
 
 	public PerformancePanel() {
 		dashboardPanel = new DashboardPanel();
 		historyPanel = new HistoryPanel();
+		myPlans = new MyPlans();
 		
 		GridBagLayout gridBagLayout = (GridBagLayout) dashboardPanel.getLayout();
 		gridBagLayout.columnWidths = new int[]{0, 0, 0, 0, 0, 0, 0, -5};
@@ -76,9 +79,8 @@ public class PerformancePanel extends JPanel {
 				
 				
 		//My Plans change icon
-		JPanel panelMyPlans = new JPanel();
 		ImageIcon iconPlans = (ImageIcon) IconFontSwing.buildIcon((IconCode)FontAwesome.LIST, 30.0f, Color.BLACK);
-		tabbedPane.addTab("My Plans  ", iconPlans, panelMyPlans, null);
+		tabbedPane.addTab("My Plans  ", iconPlans, myPlans, null);
 				
 		//My Clips change icon
 		JPanel panelMyClips = new JPanel();
