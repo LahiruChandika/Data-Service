@@ -17,8 +17,10 @@ import javax.swing.JPanel;
 
 @SuppressWarnings("serial")
 public class CustomPanel extends JPanel {
+	public CustomPanel() {
+	}
 	
-	int progress = 350;
+	int progress = 275;
 	int value = 0;
 	Arc2D.Float arc;
 	int progress1=0;
@@ -56,7 +58,7 @@ public class CustomPanel extends JPanel {
 		    String prev = listIter.previous(); 
 		    arc = new Arc2D.Float(Arc2D.PIE);
 
-		    arc.setFrameFromCenter(new Point(0,0), new Point(150-ii,150-ii)); //define arc
+		    arc.setFrameFromCenter(new Point(0,0), new Point((getHeight()/2)-ii, (getHeight()/2)-ii)); //define arc
 		    ii=ii+15;
 		    
 		    arc.setAngleStart(0);//define arc start angle
@@ -79,7 +81,7 @@ public class CustomPanel extends JPanel {
 
 		//create middle circle
 		Ellipse2D circle = new Ellipse2D.Float(0,0,110,110);
-		circle.setFrameFromCenter(new Point(0,0), new Point(150-ii,150-ii));
+		circle.setFrameFromCenter(new Point(0,0), new Point((getHeight()/2)-ii, (getHeight()/2)-ii));
 		g2.setColor(Color.WHITE);
 		g2.draw(circle);
 		g2.fill(circle);

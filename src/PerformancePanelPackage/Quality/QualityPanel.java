@@ -1,9 +1,10 @@
-package PerformancePanelPackage;
+package PerformancePanelPackage.Quality;
 
 import javax.swing.JPanel;
 import javax.swing.JSeparator;
 import javax.swing.SwingConstants;
 
+import PerformancePanelPackage.QualityDataPanel;
 import ProgressRing.CustomPanel;
 import ProgressRing.CustomPanelQuality;
 

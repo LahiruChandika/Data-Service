@@ -15,8 +15,8 @@ import javax.swing.JSeparator;
 
 import PerformancePanelPackage.AchivmentPanel;
 import PerformancePanelPackage.InsertInfo_Dashboard;
-import PerformancePanelPackage.QualityPanel;
 import PerformancePanelPackage.WorkTimePanel;
+import PerformancePanelPackage.Quality.QualityPanel;
 import jiconfont.IconCode;
 import jiconfont.icons.font_awesome.FontAwesome;
 import jiconfont.swing.IconFontSwing;

@@ -9,6 +9,7 @@ import java.awt.Insets;
 import javax.swing.JPanel;
 import javax.swing.JSeparator;
 
+import PerformancePanelPackage.Quality.QualityPanel;
 import jiconfont.IconCode;
 import jiconfont.icons.font_awesome.FontAwesome;
 import jiconfont.swing.IconFontSwing;

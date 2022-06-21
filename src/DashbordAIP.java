@@ -26,7 +26,7 @@ import javax.swing.LookAndFeel;
 public class DashbordAIP {
 
 	private JFrame frame;
-	private NavBar navBar;
+//	private NavBar navBar;
 	private JPanel mainPanel;
 	private JPanel headerPanel;
 	private DirectoriesPanel directoriesPanel;
@@ -40,7 +40,7 @@ public class DashbordAIP {
 					//Look and feel
 					UIManager.setLookAndFeel((LookAndFeel)new FlatLightLaf()); 
 					DashbordAIP window = new DashbordAIP();
-					window.frame.setMinimumSize(new Dimension(1000, 700));
+					window.frame.setMinimumSize(new Dimension(1200, 700));
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -50,7 +50,7 @@ public class DashbordAIP {
 	}
 
 	public DashbordAIP() {
-		navBar = new NavBar();
+//		navBar = new NavBar();
 		directoriesPanel = new DirectoriesPanel();
 		performancePanel = new PerformancePanel();
 		initialize();
@@ -63,10 +63,10 @@ public class DashbordAIP {
 		frame.getContentPane().setLayout(new BorderLayout(0, 0));
 		
 		//Add Navigation panel
-		JPanel panel = new JPanel();
-		frame.getContentPane().add(panel, BorderLayout.WEST);
-		panel.setLayout(new BorderLayout(0, 0));
-		panel.add((Component)navBar);
+//		JPanel panel = new JPanel();
+//		frame.getContentPane().add(panel, BorderLayout.WEST);
+//		panel.setLayout(new BorderLayout(0, 0));
+//		panel.add((Component)navBar);
 		
 		mainPanel = new JPanel();
 		frame.getContentPane().add(mainPanel, BorderLayout.CENTER);
@@ -78,17 +78,17 @@ public class DashbordAIP {
 
 		IconFontSwing.register(FontAwesome.getIconFont());
 		//mode change icon
-        Icon iconMode = IconFontSwing.buildIcon((IconCode)FontAwesome.MOON_O, 45.0f, Color.BLACK);
+        Icon iconMode = IconFontSwing.buildIcon((IconCode)FontAwesome.MOON_O, 30.0f, Color.BLACK);
 		JLabel lblMode = new JLabel(iconMode);
 		lblMode.setHorizontalAlignment(SwingConstants.RIGHT);
 		headerPanel.add(lblMode);
 		//Notification icon
-		Icon iconNottification = IconFontSwing.buildIcon((IconCode)FontAwesome.BELL, 45.0f, Color.BLACK);
+		Icon iconNottification = IconFontSwing.buildIcon((IconCode)FontAwesome.BELL, 30.0f, Color.BLACK);
 		JLabel lblNotification = new JLabel(iconNottification);
 		lblNotification.setHorizontalAlignment(SwingConstants.RIGHT);
 		headerPanel.add(lblNotification);
 		//User account icon
-		Icon iconAcc = IconFontSwing.buildIcon((IconCode)FontAwesome.USER, 45.0f, Color.BLACK);
+		Icon iconAcc = IconFontSwing.buildIcon((IconCode)FontAwesome.USER, 30.0f, Color.BLACK);
 		JLabel lblAccount = new JLabel(iconAcc);
 		lblAccount.setVerticalAlignment(SwingConstants.TOP);
 		lblAccount.setHorizontalAlignment(SwingConstants.RIGHT);

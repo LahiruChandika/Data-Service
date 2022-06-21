@@ -12,14 +12,15 @@ import InsertPanels_Dashboard.AlocatedAdminsPanel;
 import InsertPanels_Dashboard.DaysPanel;
 import InsertPanels_Dashboard.ProjectInfoPanel;
 import InsertPanels_Dashboard.projectInfopanel_MyPlans;
+import java.awt.Dimension;
 
 @SuppressWarnings("serial")
-public class insertinfo_myPlans extends JPanel {
+public class Insertinfo_myPlans extends JPanel {
 	
 	private projectInfopanel_MyPlans projectInfoPanel_Myplans;
 	private DaysPanel daysPanel;
 
-	public insertinfo_myPlans() {
+	public Insertinfo_myPlans() {
 		
 		projectInfoPanel_Myplans = new projectInfopanel_MyPlans();
 		daysPanel = new  DaysPanel();
@@ -32,6 +33,7 @@ public class insertinfo_myPlans extends JPanel {
 		setLayout(gridBagLayout);
 		
 		JSeparator separator_2 = new JSeparator();
+		separator_2.setPreferredSize(new Dimension(10, 2));
 		separator_2.setOrientation(SwingConstants.VERTICAL);
 		GridBagConstraints gbc_separator_2 = new GridBagConstraints();
 		gbc_separator_2.gridheight = 2;

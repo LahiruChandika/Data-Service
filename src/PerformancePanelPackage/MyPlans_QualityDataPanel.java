@@ -12,6 +12,7 @@ import javax.swing.JSeparator;
 import javax.swing.SwingConstants;
 import java.awt.Color;
 import javax.swing.JTextField;
+import java.awt.Dimension;
 
 @SuppressWarnings("serial")
 public class MyPlans_QualityDataPanel extends JPanel {
@@ -27,6 +28,7 @@ public class MyPlans_QualityDataPanel extends JPanel {
 		setLayout(gridBagLayout);
 		
 		JSeparator separator = new JSeparator();
+		separator.setPreferredSize(new Dimension(0, 5));
 		GridBagConstraints gbc_separator = new GridBagConstraints();
 		gbc_separator.insets = new Insets(0, 0, 5, 5);
 		gbc_separator.gridx = 2;
