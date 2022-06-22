@@ -1,27 +1,28 @@
-package PerformancePanelPackage;
+package PerformancePanelPackage.Achivement;
 
-import java.awt.Font;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.Insets;
-
-import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JLabel;
+import java.awt.GridBagLayout;
 import javax.swing.JSeparator;
+import java.awt.GridBagConstraints;
+import java.awt.Insets;
 import javax.swing.SwingConstants;
 
-import ProgressRing.CustomPanelQuality;
+import ProgressRing.CustomPanel;
+
+import java.awt.Font;
 
 @SuppressWarnings("serial")
-public class WorkTimePanel extends JPanel{
-
-	private WorktimeDataPanel wrk_dataPanel;
-	private CustomPanelQuality cpQuality;
+public class AchivmentPanel extends JPanel{
+	
+	private AchivmentDataPanel dataPanel;
+	
+	private CustomPanel cp;
 
 	
-	public WorkTimePanel() {
+	public AchivmentPanel() {
 		
-		wrk_dataPanel = new WorktimeDataPanel();
+		dataPanel = new AchivmentDataPanel();
 		
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[]{0, 0, 0, 0, 0, 0, 0, 0};
@@ -38,7 +39,7 @@ public class WorkTimePanel extends JPanel{
 		gbc_separator_4.gridy = 0;
 		add(separator_4, gbc_separator_4);
 		
-		JLabel lblNewLabel = new JLabel("Work Time (hours)");
+		JLabel lblNewLabel = new JLabel("Achivement (presentage)");
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 24));
 		GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
 		gbc_lblNewLabel.gridwidth = 3;
@@ -63,7 +64,7 @@ public class WorkTimePanel extends JPanel{
 		gbc_separator_3.gridy = 4;
 		add(separator_3, gbc_separator_3);
 		
-		cpQuality = new CustomPanelQuality(); 
+		cp = new CustomPanel(); 
 		
 		//Add Circle bar Progressbar
 		GridBagConstraints gbc_panel_1 = new GridBagConstraints();
@@ -72,8 +73,8 @@ public class WorkTimePanel extends JPanel{
 		gbc_panel_1.gridx = 2;
 		gbc_panel_1.gridy = 4;
 		//		probar.setValue(50);
-		cpQuality.setVisible(true);
-		add(cpQuality, gbc_panel_1);
+		cp.setVisible(true);
+		add(cp, gbc_panel_1);
 				
 		
 		//add data panel
@@ -82,7 +83,7 @@ public class WorkTimePanel extends JPanel{
 		gbc_panel.insets = new Insets(0, 0, 5, 5);
 		gbc_panel.gridx = 4;
 		gbc_panel.gridy = 4;
-		add(wrk_dataPanel, gbc_panel);
+		add(dataPanel, gbc_panel);
 		
 		JSeparator separator_2 = new JSeparator();
 		separator_2.setOrientation(SwingConstants.VERTICAL);
@@ -108,5 +109,5 @@ public class WorkTimePanel extends JPanel{
 		add(separator, gbc_separator);
 
 	}
-	
+
 }

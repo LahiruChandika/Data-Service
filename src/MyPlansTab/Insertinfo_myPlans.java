@@ -1,4 +1,4 @@
-package PerformancePanelPackage;
+package MyPlansTab;
 
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;

@@ -25,7 +25,5 @@ public class NavBar extends JPanel {
 		JLabel lblNewLabel = new JLabel("Main navigation ");
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		toolBar.add(lblNewLabel);
-
 	}
-
 }

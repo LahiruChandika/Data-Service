@@ -1,4 +1,4 @@
-package PerformancePanelPackage;
+package PerformancePanelPackage.Achivement;
 
 import javax.swing.JPanel;
 import java.awt.GridLayout;
@@ -13,6 +13,8 @@ import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JSeparator;
 import javax.swing.SwingConstants;
+
+import PerformancePanelPackage.TargetAchivementDataPanel;
 
 public class MyPlans_Achivement extends JPanel {
 

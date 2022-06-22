@@ -1,4 +1,4 @@
-package PerformancePanelPackage;
+package PerformancePanelPackage.WorkTime;
 
 import java.awt.Color;
 import java.awt.Font;

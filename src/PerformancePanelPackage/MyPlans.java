@@ -1,33 +1,26 @@
 package PerformancePanelPackage;
 
-import java.awt.CardLayout;
-import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JSeparator;
-
-import jiconfont.IconCode;
-import jiconfont.icons.font_awesome.FontAwesome;
-import jiconfont.swing.IconFontSwing;
 import javax.swing.JTabbedPane;
-import java.awt.FlowLayout;
-import java.awt.Font;
 import javax.swing.SwingConstants;
-import java.awt.Dimension;
 
+import MyPlansTab.Insertinfo_myPlans;
+import PerformancePanelPackage.Achivement.MyPlans_Achivement;
+import PerformancePanelPackage.Quality.MyPlane_QualityPanel;
+
+@SuppressWarnings("serial")
 public class MyPlans extends JPanel {
 	private JSeparator separator_2;
 	private JTabbedPane tabbedPane;
 	private JPanel panel;
-	private JPanel panel_1;
-	private JPanel insertInfo_myplans;
 	private Insertinfo_myPlans insertinfo;
 	private MyPlans_Achivement achivement;
 	private MyPlane_QualityPanel quality;
@@ -78,7 +71,6 @@ public class MyPlans extends JPanel {
 		tabbedPane.addTab("Achivement", null, achivement, null);
 		panel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
-		panel_1 = new JPanel();
 		tabbedPane.addTab("Quality", null, quality, null);
 		
 		JSeparator separator_1 = new JSeparator();

@@ -1,12 +1,8 @@
-package PerformancePanelPackage;
+package InsertPanels_Dashboard;
 
 import javax.swing.JPanel;
 import javax.swing.JSeparator;
 import javax.swing.SwingConstants;
-
-import InsertPanels_Dashboard.AlocatedAdminsPanel;
-import InsertPanels_Dashboard.DaysPanel;
-import InsertPanels_Dashboard.ProjectInfoPanel;
 
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;

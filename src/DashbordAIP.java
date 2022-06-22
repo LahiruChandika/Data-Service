@@ -1,27 +1,23 @@
-import java.awt.EventQueue;
-import javax.swing.Icon;
-import javax.swing.JFrame;
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.Dimension;
+import java.awt.EventQueue;
+import java.awt.FlowLayout;
+import java.awt.Font;
 
+import javax.swing.Icon;
+import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.JLabel;
-import javax.swing.SwingConstants;
+import javax.swing.JTabbedPane;
+import javax.swing.LookAndFeel;
 import javax.swing.UIManager;
 
 import com.formdev.flatlaf.FlatLightLaf;
 
-import jiconfont.swing.IconFontSwing;
+import GUI.LabelIcon;
 import jiconfont.IconCode;
 import jiconfont.icons.font_awesome.FontAwesome;
-
-import java.awt.FlowLayout;
-import java.awt.Font;
-
-import javax.swing.JTabbedPane;
-import javax.swing.LookAndFeel;
+import jiconfont.swing.IconFontSwing;
 
 public class DashbordAIP {
 
@@ -50,13 +46,14 @@ public class DashbordAIP {
 	}
 
 	public DashbordAIP() {
-//		navBar = new NavBar();
 		directoriesPanel = new DirectoriesPanel();
 		performancePanel = new PerformancePanel();
+		
 		initialize();
 	}
 
 	private void initialize() {
+		
 		frame = new JFrame();
 		frame.setBounds(100, 100, 846, 555);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -77,22 +74,15 @@ public class DashbordAIP {
 		headerPanel.setLayout(new FlowLayout(FlowLayout.RIGHT, 10, 5));
 
 		IconFontSwing.register(FontAwesome.getIconFont());
-		//mode change icon
-        Icon iconMode = IconFontSwing.buildIcon((IconCode)FontAwesome.MOON_O, 30.0f, Color.BLACK);
-		JLabel lblMode = new JLabel(iconMode);
-		lblMode.setHorizontalAlignment(SwingConstants.RIGHT);
-		headerPanel.add(lblMode);
+
 		//Notification icon
-		Icon iconNottification = IconFontSwing.buildIcon((IconCode)FontAwesome.BELL, 30.0f, Color.BLACK);
-		JLabel lblNotification = new JLabel(iconNottification);
-		lblNotification.setHorizontalAlignment(SwingConstants.RIGHT);
-		headerPanel.add(lblNotification);
-		//User account icon
-		Icon iconAcc = IconFontSwing.buildIcon((IconCode)FontAwesome.USER, 30.0f, Color.BLACK);
-		JLabel lblAccount = new JLabel(iconAcc);
-		lblAccount.setVerticalAlignment(SwingConstants.TOP);
-		lblAccount.setHorizontalAlignment(SwingConstants.RIGHT);
-		headerPanel.add(lblAccount);
+		Icon iconNottification = IconFontSwing.buildIcon((IconCode)FontAwesome.COG, 30.0f, Color.BLACK);
+		headerPanel.add(new LabelIcon(iconNottification));
+		
+		//User icon
+		Icon iconAcc = IconFontSwing.buildIcon((IconCode)FontAwesome.USER, 30.0f, Color.BLACK);		
+		//add account icon and name
+		headerPanel.add(new LabelIcon("username", iconAcc));
 		
 		//add tabbed pane
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
@@ -105,4 +95,5 @@ public class DashbordAIP {
 		tabbedPane.addTab("Performance", null, performancePanel, null);
 	
 	}
+
 }

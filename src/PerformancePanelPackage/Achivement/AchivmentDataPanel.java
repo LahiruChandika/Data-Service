@@ -1,4 +1,4 @@
-package PerformancePanelPackage;
+package PerformancePanelPackage.Achivement;
 
 import javax.swing.JPanel;
 import java.awt.GridBagLayout;

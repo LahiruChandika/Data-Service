@@ -13,10 +13,10 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JSeparator;
 
-import PerformancePanelPackage.AchivmentPanel;
-import PerformancePanelPackage.InsertInfo_Dashboard;
-import PerformancePanelPackage.WorkTimePanel;
+import InsertPanels_Dashboard.InsertInfo_Dashboard;
+import PerformancePanelPackage.Achivement.AchivmentPanel;
 import PerformancePanelPackage.Quality.QualityPanel;
+import PerformancePanelPackage.WorkTime.WorkTimePanel;
 import jiconfont.IconCode;
 import jiconfont.icons.font_awesome.FontAwesome;
 import jiconfont.swing.IconFontSwing;

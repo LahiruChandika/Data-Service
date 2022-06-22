@@ -1,28 +1,29 @@
-package PerformancePanelPackage;
+package PerformancePanelPackage.Quality;
 
 import javax.swing.JPanel;
-import javax.swing.JLabel;
-import java.awt.GridBagLayout;
 import javax.swing.JSeparator;
-import java.awt.GridBagConstraints;
-import java.awt.Insets;
 import javax.swing.SwingConstants;
 
 import ProgressRing.CustomPanel;
+import ProgressRing.CustomPanelQuality;
 
 import java.awt.Font;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Insets;
+
+import javax.swing.JLabel;
 
 @SuppressWarnings("serial")
-public class AchivmentPanel extends JPanel{
+public class MyPlane_QualityPanel extends JPanel {
 	
-	private AchivmentDataPanel dataPanel;
-	
-	private CustomPanel cp;
+	private MyPlans_QualityDataPanel myclips_qu_dataPanel;
+	private CustomPanelQuality cpQuality;
 
 	
-	public AchivmentPanel() {
+	public MyPlane_QualityPanel() {
 		
-		dataPanel = new AchivmentDataPanel();
+		myclips_qu_dataPanel = new MyPlans_QualityDataPanel();
 		
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[]{0, 0, 0, 0, 0, 0, 0, 0};
@@ -38,15 +39,6 @@ public class AchivmentPanel extends JPanel{
 		gbc_separator_4.gridx = 2;
 		gbc_separator_4.gridy = 0;
 		add(separator_4, gbc_separator_4);
-		
-		JLabel lblNewLabel = new JLabel("Achivement (presentage)");
-		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 24));
-		GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
-		gbc_lblNewLabel.gridwidth = 3;
-		gbc_lblNewLabel.insets = new Insets(0, 0, 5, 5);
-		gbc_lblNewLabel.gridx = 2;
-		gbc_lblNewLabel.gridy = 1;
-		add(lblNewLabel, gbc_lblNewLabel);
 		
 		JSeparator separator_5 = new JSeparator();
 		GridBagConstraints gbc_separator_5 = new GridBagConstraints();
@@ -64,7 +56,7 @@ public class AchivmentPanel extends JPanel{
 		gbc_separator_3.gridy = 4;
 		add(separator_3, gbc_separator_3);
 		
-		cp = new CustomPanel(); 
+		cpQuality = new CustomPanelQuality(); 
 		
 		//Add Circle bar Progressbar
 		GridBagConstraints gbc_panel_1 = new GridBagConstraints();
@@ -73,8 +65,8 @@ public class AchivmentPanel extends JPanel{
 		gbc_panel_1.gridx = 2;
 		gbc_panel_1.gridy = 4;
 		//		probar.setValue(50);
-		cp.setVisible(true);
-		add(cp, gbc_panel_1);
+		cpQuality.setVisible(true);
+		add(cpQuality, gbc_panel_1);
 				
 		
 		//add data panel
@@ -83,7 +75,7 @@ public class AchivmentPanel extends JPanel{
 		gbc_panel.insets = new Insets(0, 0, 5, 5);
 		gbc_panel.gridx = 4;
 		gbc_panel.gridy = 4;
-		add(dataPanel, gbc_panel);
+		add(myclips_qu_dataPanel, gbc_panel);
 		
 		JSeparator separator_2 = new JSeparator();
 		separator_2.setOrientation(SwingConstants.VERTICAL);
