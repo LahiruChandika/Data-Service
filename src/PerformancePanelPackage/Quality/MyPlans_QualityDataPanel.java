@@ -35,7 +35,7 @@ public class MyPlans_QualityDataPanel extends JPanel {
 		gbc_separator.gridy = 0;
 		add(separator, gbc_separator);
 		
-		JLabel lblNewLabel = new JLabel("Clip Count =");
+		JLabel lblNewLabel = new JLabel("Clip Count       :");
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
 		gbc_lblNewLabel.anchor = GridBagConstraints.WEST;
@@ -62,7 +62,7 @@ public class MyPlans_QualityDataPanel extends JPanel {
 		gbc_lblClipCount.gridy = 1;
 		add(lblClipCount, gbc_lblClipCount);
 		
-		JLabel lblNewLabel_2 = new JLabel("0 Clip Count =");
+		JLabel lblNewLabel_2 = new JLabel("0 Clip Count    :");
 		lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		GridBagConstraints gbc_lblNewLabel_2 = new GridBagConstraints();
 		gbc_lblNewLabel_2.anchor = GridBagConstraints.WEST;
