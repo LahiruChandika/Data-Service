@@ -61,7 +61,7 @@ public class PerformancePanel extends JPanel {
 		
 		IconFontSwing.register(FontAwesome.getIconFont());
 		//add DashbboardPanel and Icon
-        ImageIcon iconDash = (ImageIcon) IconFontSwing.buildIcon((IconCode)FontAwesome.TH_LARGE, 30.0f, Color.BLACK);
+        ImageIcon iconDash = (ImageIcon) IconFontSwing.buildIcon((IconCode)FontAwesome.TH_LARGE, 30.0f, (new Color(148,148,148)));
         tabbedPane.addTab("Dashboard  ", iconDash, dashboardPanel, null);
 		
 		
@@ -93,17 +93,17 @@ public class PerformancePanel extends JPanel {
 		dashboardPanel.add(separator_1, gbc_separator_1);
 		
 		//History change icon
-		ImageIcon iconHistory = (ImageIcon) IconFontSwing.buildIcon((IconCode)FontAwesome.HISTORY, 30.0f, Color.BLACK);
+		ImageIcon iconHistory = (ImageIcon) IconFontSwing.buildIcon((IconCode)FontAwesome.HISTORY, 30.0f, (new Color(148,148,148)));
 		tabbedPane.addTab("History  ", iconHistory, historyPanel, null);
 				
 				
 		//My Plans change icon
-		ImageIcon iconPlans = (ImageIcon) IconFontSwing.buildIcon((IconCode)FontAwesome.LIST, 30.0f, Color.BLACK);
+		ImageIcon iconPlans = (ImageIcon) IconFontSwing.buildIcon((IconCode)FontAwesome.LIST, 30.0f, (new Color(148,148,148)));
 		tabbedPane.addTab("My Plans  ", iconPlans, myPlans, null);
 				
 		//My Clips change icon
 		JPanel panelMyClips = new JPanel();
-		ImageIcon iconClips = (ImageIcon) IconFontSwing.buildIcon((IconCode)FontAwesome.YOUTUBE_PLAY, 30.0f, Color.BLACK);
+		ImageIcon iconClips = (ImageIcon) IconFontSwing.buildIcon((IconCode)FontAwesome.YOUTUBE_PLAY, 30.0f, (new Color(148,148,148)));
 		tabbedPane.addTab("My Clips  ", iconClips, panelMyClips, null);	
 	}	
 	

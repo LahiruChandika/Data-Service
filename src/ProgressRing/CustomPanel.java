@@ -20,7 +20,7 @@ public class CustomPanel extends JPanel {
 	public CustomPanel() {
 	}
 	
-	int progress = 275;
+	int progress = 235;
 	int value = 0;
 	Arc2D.Float arc;
 	int progress1=0;
@@ -34,7 +34,7 @@ public class CustomPanel extends JPanel {
 		int c = (progress/100) + 1; //calculate ring count
 		
 		//Color Array list
-		Color[] stColr = {Color.red,Color.green,Color.ORANGE,Color.blue,Color.pink,Color.cyan, Color.yellow};
+		Color[] stColr = {(new Color(95,160,255)),Color.green,Color.ORANGE,Color.blue,Color.pink,Color.cyan, Color.yellow};
 		
 		//create array list to add arcs
 		List<String> arcList = new ArrayList<String>();
@@ -46,7 +46,7 @@ public class CustomPanel extends JPanel {
 		Graphics2D g2=(Graphics2D)g;	
 		g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 		g2.translate(this.getWidth()/2, this.getHeight()/2);
-		g2.rotate(Math.toRadians(90));
+		g2.rotate(Math.toRadians(270));
 	
 		progress1 = progress;
 		int ii = 0; //for calculate arc sizes.
@@ -86,9 +86,9 @@ public class CustomPanel extends JPanel {
 		g2.draw(circle);
 		g2.fill(circle);
 		
-		g2.setColor(Color.red);
-		g2.rotate(Math.toRadians(270));
-		g.setFont(new Font("Verdana",Font.PLAIN,30));
+		g2.setColor((new Color(95,160,255)));
+		g2.rotate(Math.toRadians(90));
+		g.setFont(new Font("Verdana",Font.BOLD,25));
 		FontMetrics fm = g2.getFontMetrics();
 		Rectangle2D r = fm.getStringBounds(progress+"%", g);
 		int x = (0-(int)r.getWidth())/2;

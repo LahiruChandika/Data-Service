@@ -4,6 +4,8 @@ import javax.swing.JPanel;
 import javax.swing.JSeparator;
 import javax.swing.SwingConstants;
 
+import Shadow.RoundedPanel;
+
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
@@ -46,8 +48,7 @@ public class InsertInfo_Dashboard extends JPanel {
 		add(separator_3, gbc_separator_3);
 		
 		GridBagConstraints gbc_panel_2 = new GridBagConstraints();
-		gbc_panel_2.insets = new Insets(0, 0, 5, 5);
-		gbc_panel_2.fill = GridBagConstraints.BOTH;
+		gbc_panel_2.insets = new Insets(10, 10, 5, 5);
 		gbc_panel_2.gridx = 2;
 		gbc_panel_2.gridy = 1;
 		add(projectInfoPanel, gbc_panel_2);
@@ -63,8 +64,7 @@ public class InsertInfo_Dashboard extends JPanel {
 		
 		
 		GridBagConstraints gbc_panel_1 = new GridBagConstraints();
-		gbc_panel_1.insets = new Insets(0, 0, 5, 5);
-		gbc_panel_1.fill = GridBagConstraints.BOTH;
+		gbc_panel_1.insets = new Insets(10, 0, 5, 5);
 		gbc_panel_1.gridx = 4;
 		gbc_panel_1.gridy = 1;
 		add(alocatedAdminsPanel, gbc_panel_1);
@@ -79,8 +79,7 @@ public class InsertInfo_Dashboard extends JPanel {
 		
 		
 		GridBagConstraints gbc_panel = new GridBagConstraints();
-		gbc_panel.insets = new Insets(0, 0, 5, 5);
-		gbc_panel.fill = GridBagConstraints.BOTH;
+		gbc_panel.insets = new Insets(10, 0, 5, 10);
 		gbc_panel.gridx = 6;
 		gbc_panel.gridy = 1;
 		add(daysPanel, gbc_panel);

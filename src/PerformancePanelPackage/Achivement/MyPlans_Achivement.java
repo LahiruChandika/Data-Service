@@ -28,9 +28,9 @@ public class MyPlans_Achivement extends JPanel {
 		
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-		gridBagLayout.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+		gridBagLayout.rowHeights = new int[]{0, 0, 0, 0, 0, 0};
 		gridBagLayout.columnWeights = new double[]{0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, Double.MIN_VALUE};
-		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 1.0, Double.MIN_VALUE};
 		setLayout(gridBagLayout);
 		
 		JSeparator separator = new JSeparator();
@@ -51,7 +51,7 @@ public class MyPlans_Achivement extends JPanel {
 		JSeparator separator_1 = new JSeparator();
 		separator_1.setOrientation(SwingConstants.VERTICAL);
 		GridBagConstraints gbc_separator_1 = new GridBagConstraints();
-		gbc_separator_1.gridheight = 8;
+		gbc_separator_1.gridheight = 3;
 		gbc_separator_1.insets = new Insets(0, 0, 0, 5);
 		gbc_separator_1.gridx = 1;
 		gbc_separator_1.gridy = 2;
@@ -67,7 +67,7 @@ public class MyPlans_Achivement extends JPanel {
 		
 		JSeparator separator_2 = new JSeparator();
 		GridBagConstraints gbc_separator_2 = new GridBagConstraints();
-		gbc_separator_2.gridheight = 8;
+		gbc_separator_2.gridheight = 3;
 		gbc_separator_2.insets = new Insets(0, 0, 0, 5);
 		gbc_separator_2.gridx = 4;
 		gbc_separator_2.gridy = 2;
@@ -93,12 +93,12 @@ public class MyPlans_Achivement extends JPanel {
 		add(comboBox, gbc_comboBox);
 		
 		GridBagConstraints gbc_panel_1 = new GridBagConstraints();
-		gbc_panel_1.insets = new Insets(0, 0, 5, 5);
+		gbc_panel_1.insets = new Insets(0, 0, 0, 5);
 		gbc_panel_1.gridx = 2;
 		gbc_panel_1.gridy = 4;
 		add(dataPanelTarget, gbc_panel_1);
 		GridBagConstraints gbc_panel = new GridBagConstraints();
-		gbc_panel.insets = new Insets(0, 0, 5, 5);
+		gbc_panel.insets = new Insets(0, 0, 0, 5);
 		gbc_panel.gridx = 5;
 		gbc_panel.gridy = 4;
 		add(dataPanel, gbc_panel);

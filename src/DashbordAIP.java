@@ -13,6 +13,7 @@ import javax.swing.JTabbedPane;
 import javax.swing.LookAndFeel;
 import javax.swing.UIManager;
 
+import com.formdev.flatlaf.FlatDarkLaf;
 import com.formdev.flatlaf.FlatLightLaf;
 
 import GUI.LabelIcon;
@@ -35,7 +36,8 @@ public class DashbordAIP {
 			public void run() {
 				try {
 					//Look and feel
-					UIManager.setLookAndFeel((LookAndFeel)new FlatLightLaf()); 
+					UIManager.setLookAndFeel((LookAndFeel)new FlatLightLaf());
+//					UIManager.setLookAndFeel((LookAndFeel)new FlatDarkLaf());
 					DashbordAIP window = new DashbordAIP();
 					window.frame.setMinimumSize(new Dimension(1200, 700));
 					window.frame.setVisible(true);
@@ -77,11 +79,11 @@ public class DashbordAIP {
 		IconFontSwing.register(FontAwesome.getIconFont());
 
 		//Notification icon
-		Icon iconNottification = IconFontSwing.buildIcon((IconCode)FontAwesome.COG, 30.0f, Color.BLACK);
+		Icon iconNottification = IconFontSwing.buildIcon((IconCode)FontAwesome.COG, 30.0f, (new Color(148,148,148)));
 		headerPanel.add(new LabelIcon(iconNottification));
 		
 		//User icon
-		Icon iconAcc = IconFontSwing.buildIcon((IconCode)FontAwesome.USER, 30.0f, Color.BLACK);		
+		Icon iconAcc = IconFontSwing.buildIcon((IconCode)FontAwesome.USER, 30.0f, (new Color(148,148,148)));		
 		//add account icon and name
 		headerPanel.add(new LabelIcon("username", iconAcc));
 		
