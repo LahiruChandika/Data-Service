@@ -1,6 +1,5 @@
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.FlowLayout;
@@ -11,15 +10,24 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.LookAndFeel;
+import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 
 import com.formdev.flatlaf.FlatDarkLaf;
 import com.formdev.flatlaf.FlatLightLaf;
 
+import GUI.EventSwitchSelected;
 import GUI.LabelIcon;
+import GUI.SettingPanel;
+import GUI.SwitchButton;
 import jiconfont.IconCode;
 import jiconfont.icons.font_awesome.FontAwesome;
 import jiconfont.swing.IconFontSwing;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import javax.swing.JPopupMenu;
+import java.awt.Component;
+import javax.swing.JMenuItem;
 
 public class DashbordAIP {
 
@@ -29,6 +37,29 @@ public class DashbordAIP {
 	private JPanel headerPanel;
 	private DirectoriesPanel directoriesPanel;
 	private PerformancePanel performancePanel;
+	private SwitchButton switchbutton;
+	private JPopupMenu popupMenu;
+	private JMenuItem mntmNewMenuItem;
+	
+	public static void changeLaf(final JFrame frame, final String laf) {
+        if (laf.equals("Dark")) {
+            try {
+                UIManager.setLookAndFeel((LookAndFeel)new FlatDarkLaf());
+            }
+            catch (Exception e) {
+                System.err.println("Failed to initialize LaF");
+            }
+        }
+        if (laf.equals("Light")) {
+            try {
+                UIManager.setLookAndFeel((LookAndFeel)new FlatLightLaf());
+            }
+            catch (Exception e) {
+                System.err.println("Failed to initialize LaF");
+            }
+        }
+        SwingUtilities.updateComponentTreeUI(frame);
+    }
 
 
 	public static void main(String[] args) {
@@ -36,8 +67,8 @@ public class DashbordAIP {
 			public void run() {
 				try {
 					//Look and feel
-					UIManager.setLookAndFeel((LookAndFeel)new FlatLightLaf());
-//					UIManager.setLookAndFeel((LookAndFeel)new FlatDarkLaf());
+//					UIManager.setLookAndFeel((LookAndFeel)new FlatLightLaf());
+					UIManager.setLookAndFeel((LookAndFeel)new FlatDarkLaf());
 					DashbordAIP window = new DashbordAIP();
 					window.frame.setMinimumSize(new Dimension(1200, 700));
 					window.frame.setVisible(true);
@@ -80,12 +111,43 @@ public class DashbordAIP {
 
 		//Notification icon
 		Icon iconNottification = IconFontSwing.buildIcon((IconCode)FontAwesome.COG, 30.0f, (new Color(148,148,148)));
-		headerPanel.add(new LabelIcon(iconNottification));
+		Icon iconLog = IconFontSwing.buildIcon((IconCode)FontAwesome.LOCK, 30.0f, (new Color(148,148,148)));
+		LabelIcon labelIcon = new LabelIcon(iconNottification);
+		SettingPanel st = new SettingPanel();
+		headerPanel.add(st);
+		st.hide();
+		labelIcon.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				if (st.isVisible()) {
+					st.hide();
+				}else {
+					st.show();
+				}
+				
+				
+			}
+		});
+		headerPanel.add(labelIcon);
+		
+
+//		Icon iconLog1 = IconFontSwing.buildIcon((IconCode)FontAwesome.LOCK, 30.0f, (new Color(148,148,148)));
+//		comboBox = new DropDownMenu();
+//		comboBox.setModel((ComboBoxModel) new LabelIcon("username", iconLog1));
+//		headerPanel.add(comboBox);
+//		headerPanel.add(new LabelIcon(iconNottification));
 		
 		//User icon
 		Icon iconAcc = IconFontSwing.buildIcon((IconCode)FontAwesome.USER, 30.0f, (new Color(148,148,148)));		
 		//add account icon and name
-		headerPanel.add(new LabelIcon("username", iconAcc));
+		LabelIcon labelIcon_1 = new LabelIcon("username", iconAcc);
+		headerPanel.add(labelIcon_1);
+		
+		popupMenu = new JPopupMenu();
+		addPopup(labelIcon_1, popupMenu);
+		
+		mntmNewMenuItem = new JMenuItem("New menu item");
+		popupMenu.add(mntmNewMenuItem);
 		
 		//add tabbed pane
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
@@ -97,6 +159,34 @@ public class DashbordAIP {
 		//add Performance panel to tabbed pane
 		tabbedPane.addTab("Performance", null, performancePanel, null);
 	
+//		switchbutton.addEventSelected(new EventSwitchSelected() {
+//            @Override
+//            public void onSelected(boolean selected) {
+//                if (selected) {
+//                	changeLaf(frame, "Dark");
+//                } else {
+//                	changeLaf(frame, "Light");
+//                }
+//            }
+//        });
+		
 	}
 
+	private static void addPopup(Component component, final JPopupMenu popup) {
+		component.addMouseListener(new MouseAdapter() {
+			public void mousePressed(MouseEvent e) {
+				if (e.isPopupTrigger()) {
+					showMenu(e);
+				}
+			}
+			public void mouseReleased(MouseEvent e) {
+				if (e.isPopupTrigger()) {
+					showMenu(e);
+				}
+			}
+			private void showMenu(MouseEvent e) {
+				popup.show(e.getComponent(), e.getX(), e.getY());
+			}
+		});
+	}
 }
