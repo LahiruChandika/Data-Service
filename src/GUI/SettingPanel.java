@@ -3,6 +3,7 @@ package GUI;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
+import javafx.event.ActionEvent;
 import javafx.stage.Window;
 
 import java.awt.GridBagLayout;
@@ -14,6 +15,8 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 
 import java.awt.Insets;
+import java.awt.event.ComponentEvent;
+import java.awt.event.ComponentListener;
 
 public class SettingPanel extends JPanel {
 	
@@ -55,18 +58,47 @@ public class SettingPanel extends JPanel {
 		gbc_lblLogout.gridy = 1;
 		add(lblLogout, gbc_lblLogout);
 		
+		switchbutton.addComponentListener(new ComponentListener() {
+			
+			@Override
+			public void componentShown(ComponentEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void componentResized(ComponentEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void componentMoved(ComponentEvent e) {
+				// TODO Auto-generated method stub
+				
+				
+			}
+			
+			@Override
+			public void componentHidden(ComponentEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+		
+		Component component = (Component) e.getSource();
+		JFrame frame = (JFrame) SwingUtilities.getRoot(component);
+		
+		if (selected) {
+			changeLaf(frame, "Dark");
+		} else {
+			changeLaf(frame, "Light");
+		}
+		
 		switchbutton.addEventSelected(new EventSwitchSelected() {
           @Override
           public void onSelected(boolean selected) {
      
-        	  Component component = (Component) e.getSource();
-              JFrame frame = (JFrame) SwingUtilities.getRoot(component);
-              
-              if (selected) {
-              	changeLaf(frame, "Dark");
-              } else {
-              	changeLaf(frame, "Light");
-              }
           }
       });
 
