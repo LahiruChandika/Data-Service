@@ -47,7 +47,7 @@ public class CustomPanelQuality  extends JPanel {
 		g2.draw(circle);
 		g2.fill(circle);
 		
-		g2.setColor((new Color(95,160,255)));
+		g2.setColor((new Color(75,75,195)));
 		g2.rotate(Math.toRadians(90));
 		g.setFont(new Font("Verdana",Font.BOLD,25));
 		FontMetrics fm = g2.getFontMetrics();
@@ -56,5 +56,4 @@ public class CustomPanelQuality  extends JPanel {
 		int y = (0-(int)r.getHeight())/2 + fm.getAscent();
 		g2.drawString(progressQuality+"%", x, y);				
 	}
-
 }

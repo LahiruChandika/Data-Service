@@ -39,6 +39,8 @@ public class SwitchButton extends Component{
 	private float speed = 1.5f;
 	private List<EventSwitchSelected> events;
 
+	private Component comp = this;
+	
 	public SwitchButton() {
 		setBackground(new Color(0,174,255));
 		setPreferredSize(new Dimension(50,25));
@@ -138,6 +140,10 @@ public class SwitchButton extends Component{
 	
 	public void addEventSelected(EventSwitchSelected event) {
 		events.add(event);
+	}
+
+	public Component getComp() {
+		return comp;
 	}
 	
 }

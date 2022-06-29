@@ -20,25 +20,32 @@ public class CustomPanel extends JPanel {
 	public CustomPanel() {
 	}
 	
-	int progress = 235;
+	int progress = 300;
 	int value = 0;
 	Arc2D.Float arc;
 	int progress1=0;
 	int index = -1;
 	int remi = 0;
+	int ringCount =0;  
 	
 	
 	public void paint(Graphics g) {
 		super.paint(g);
+		
+		//calculate ring count
+		if ((progress%100)==0) {
+			ringCount = (progress/100);
+		} else {
+			ringCount = (progress/100) + 1; 
+		};
 	
-		int c = (progress/100) + 1; //calculate ring count
 		
 		//Color Array list
-		Color[] stColr = {(new Color(95,160,255)),Color.green,Color.ORANGE,Color.blue,Color.pink,Color.cyan, Color.yellow};
-		
+		Color[] stColr = {Color.blue,Color.pink,Color.cyan,(new Color(38,110,115)),(new Color(204,170,102)),(new Color(75,75,195))};
+			
 		//create array list to add arcs
 		List<String> arcList = new ArrayList<String>();
-		for (int i = 1; i <= c; i++) {
+		for (int i = 1; i <= ringCount; i++) {
 			arcList.add(new String("arc" + i));
 			index++; // for select colors form color array list			
 		}

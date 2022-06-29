@@ -1,27 +1,24 @@
 package GUI;
 
 import javax.swing.JPanel;
+import javax.swing.LookAndFeel;
 import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
 
-import javafx.event.ActionEvent;
-import javafx.stage.Window;
+import com.formdev.flatlaf.FlatDarkLaf;
+import com.formdev.flatlaf.FlatLightLaf;
 
 import java.awt.GridBagLayout;
 import javax.swing.JLabel;
 import java.awt.GridBagConstraints;
-import java.awt.Component;
 import java.awt.Font;
-import javax.swing.JButton;
 import javax.swing.JFrame;
 
 import java.awt.Insets;
-import java.awt.event.ComponentEvent;
-import java.awt.event.ComponentListener;
 
 public class SettingPanel extends JPanel {
 	
 	private SwitchButton switchbutton;
-	
 
 	public SettingPanel() {
 		
@@ -58,50 +55,40 @@ public class SettingPanel extends JPanel {
 		gbc_lblLogout.gridy = 1;
 		add(lblLogout, gbc_lblLogout);
 		
-		switchbutton.addComponentListener(new ComponentListener() {
-			
-			@Override
-			public void componentShown(ComponentEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void componentResized(ComponentEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void componentMoved(ComponentEvent e) {
-				// TODO Auto-generated method stub
-				
-				
-			}
-			
-			@Override
-			public void componentHidden(ComponentEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-		});
-		
-		Component component = (Component) e.getSource();
-		JFrame frame = (JFrame) SwingUtilities.getRoot(component);
-		
-		if (selected) {
-			changeLaf(frame, "Dark");
-		} else {
-			changeLaf(frame, "Light");
-		}
-		
 		switchbutton.addEventSelected(new EventSwitchSelected() {
           @Override
           public void onSelected(boolean selected) {
-     
+        	  JFrame frame = (JFrame) SwingUtilities.getRoot(switchbutton.getComp());
+        	  
+        	  if (selected) {
+        		  changeLaf(frame, "Light");
+        	  } else {
+        		  changeLaf(frame, "Dark");
+        	  }
           }
       });
-
 	}
+	
+	public static void changeLaf(final JFrame frame, final String laf) {
+        if (laf.equals("Dark")) {
+            try {
+                UIManager.setLookAndFeel((LookAndFeel)new FlatDarkLaf());
+            }
+            catch (Exception e) {
+                System.err.println("Failed to initialize LaF");
+            }
+        }
+        if (laf.equals("Light")) {
+            try {
+                UIManager.setLookAndFeel((LookAndFeel)new FlatLightLaf());
+            }
+            catch (Exception e) {
+                System.err.println("Failed to initialize LaF");
+            }
+        }
+        SwingUtilities.updateComponentTreeUI(frame);
+    }
 
 }
+
+
