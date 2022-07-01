@@ -24,9 +24,12 @@ import jiconfont.IconCode;
 import jiconfont.icons.font_awesome.FontAwesome;
 import jiconfont.swing.IconFontSwing;
 import javax.swing.border.LineBorder;
+import javax.swing.border.MatteBorder;
 import javax.swing.border.SoftBevelBorder;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.EtchedBorder;
+import java.awt.SystemColor;
+import java.awt.Rectangle;
 
 @SuppressWarnings("serial")
 public class DashboardPanel extends JPanel {
@@ -34,10 +37,13 @@ public class DashboardPanel extends JPanel {
 	private JPanel panel;
 	private Dash_CardLayoutPanel dashCardLayout;
 	public DashboardPanel() {
+		setBorder(null);
 		insertInfo = new InsertInfo_Dashboard();
-		insertInfo.setBorder(new LineBorder(Color.GRAY, 3, true));
+		insertInfo.setBorder(new MatteBorder(1,0,0,0,(new Color(148,148,148))));
+		insertInfo.setForeground(SystemColor.windowBorder);
 		dashCardLayout = new Dash_CardLayoutPanel();
-		dashCardLayout.setBorder(new LineBorder(Color.GRAY, 3, true));
+		
+		
 		
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[]{0, 0, 0, 0};

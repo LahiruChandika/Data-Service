@@ -43,6 +43,7 @@ public class DashbordAIP {
 	private SwitchButton switchbutton;
 	private JPopupMenu popupMenu;
 	private JMenuItem mntmNewMenuItem;
+	private JPanel footer;
 	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -83,6 +84,8 @@ public class DashbordAIP {
 		mainPanel = new JPanel();
 		frame.getContentPane().add(mainPanel, BorderLayout.CENTER);
 		mainPanel.setLayout(new BorderLayout(0, 0));
+		
+		
 		
 		headerPanel = new JPanel();
 		mainPanel.add(headerPanel, BorderLayout.NORTH);
@@ -131,6 +134,8 @@ public class DashbordAIP {
 		tabbedPane.addTab("Directories", null, directoriesPanel, null);
 		//add Performance panel to tabbed pane
 		tabbedPane.addTab("Performance", null, performancePanel, null);
+		
+		
 	
 		
 	}

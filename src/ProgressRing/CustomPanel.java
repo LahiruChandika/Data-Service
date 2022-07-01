@@ -20,14 +20,13 @@ public class CustomPanel extends JPanel {
 	public CustomPanel() {
 	}
 	
-	int progress = 300;
+	int progress = 78;
 	int value = 0;
 	Arc2D.Float arc;
 	int progress1=0;
 	int index = -1;
 	int remi = 0;
-	int ringCount =0;  
-	
+	int ringCount =0; 
 	
 	public void paint(Graphics g) {
 		super.paint(g);
@@ -38,10 +37,9 @@ public class CustomPanel extends JPanel {
 		} else {
 			ringCount = (progress/100) + 1; 
 		};
-	
-		
+			
 		//Color Array list
-		Color[] stColr = {Color.blue,Color.pink,Color.cyan,(new Color(38,110,115)),(new Color(204,170,102)),(new Color(75,75,195))};
+		Color[] stColr = {(new Color(95,160,255)),(new Color(38,110,115)),(new Color(204,170,102)),(new Color(75,75,195)),Color.blue,Color.pink,Color.cyan};
 			
 		//create array list to add arcs
 		List<String> arcList = new ArrayList<String>();
@@ -56,7 +54,7 @@ public class CustomPanel extends JPanel {
 		g2.rotate(Math.toRadians(270));
 	
 		progress1 = progress;
-		int ii = 0; //for calculate arc sizes.
+		int ringRadius = 0; //for calculate arc sizes.
 		
 		//iterate array list backward
 		ListIterator<String> listIter = arcList.listIterator(arcList.size());
@@ -65,8 +63,8 @@ public class CustomPanel extends JPanel {
 		    String prev = listIter.previous(); 
 		    arc = new Arc2D.Float(Arc2D.PIE);
 
-		    arc.setFrameFromCenter(new Point(0,0), new Point((getHeight()/2)-ii, (getHeight()/2)-ii)); //define arc
-		    ii=ii+15;
+		    arc.setFrameFromCenter(new Point(0,0), new Point((getHeight()/2)-ringRadius, (getHeight()/2)-ringRadius)); //define arc
+		    ringRadius=ringRadius+15;
 		    
 		    arc.setAngleStart(0);//define arc start angle
 		
@@ -88,7 +86,7 @@ public class CustomPanel extends JPanel {
 
 		//create middle circle
 		Ellipse2D circle = new Ellipse2D.Float(0,0,110,110);
-		circle.setFrameFromCenter(new Point(0,0), new Point((getHeight()/2)-ii, (getHeight()/2)-ii));
+		circle.setFrameFromCenter(new Point(0,0), new Point((getHeight()/2)-ringRadius, (getHeight()/2)-ringRadius));
 		g2.setColor(Color.WHITE);
 		g2.draw(circle);
 		g2.fill(circle);

@@ -60,18 +60,17 @@ public class Layyerd {
 		
 		JPanel mainPanel = new JPanel();
 		frame.getContentPane().add(mainPanel, BorderLayout.CENTER);
-		mainPanel.setLayout(null);
+		mainPanel.setLayout(new BorderLayout(0, 0));
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(Color.WHITE);
 		panel.setForeground(Color.WHITE);
-		panel.setBounds(12, 13, 522, 316);
 		mainPanel.add(panel);
 		panel.setLayout(null);
 		
 		JPanel settingPanel = new JPanel();
 		settingPanel.setBackground(Color.ORANGE);
-		settingPanel.setBounds(355, 68, 139, 81);
+		settingPanel.setBounds(354, 109, 139, 81);
 		panel.add(settingPanel);
 		settingPanel.hide();
 		
@@ -105,7 +104,6 @@ public class Layyerd {
 		
 		
 	}
-
 }
 
 

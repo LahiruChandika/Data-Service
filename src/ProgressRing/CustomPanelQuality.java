@@ -20,10 +20,6 @@ public class CustomPanelQuality  extends JPanel {
 	int progressQuality = 78;
 	Arc2D.Float arc;
 	
-//	@Override
-//	protected void paintComponent(Graphics g) {
-//		super.paintComponent(g);	
-//	}
 	public void paint(Graphics g) {
 		super.paint(g);
 	
@@ -47,7 +43,7 @@ public class CustomPanelQuality  extends JPanel {
 		g2.draw(circle);
 		g2.fill(circle);
 		
-		g2.setColor((new Color(75,75,195)));
+		g2.setColor((new Color(95,160,255)));
 		g2.rotate(Math.toRadians(90));
 		g.setFont(new Font("Verdana",Font.BOLD,25));
 		FontMetrics fm = g2.getFontMetrics();

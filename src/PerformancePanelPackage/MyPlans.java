@@ -1,23 +1,16 @@
 package PerformancePanelPackage;
 
-import java.awt.Dimension;
+import java.awt.Color;
 import java.awt.FlowLayout;
-import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
 
 import javax.swing.JPanel;
-import javax.swing.JSeparator;
-import javax.swing.JTabbedPane;
-import javax.swing.SwingConstants;
+import javax.swing.border.MatteBorder;
 
 import MyPlansTab.Insertinfo_myPlans;
 import MyPlansTab.MyPlans_TabbedPane;
-import PerformancePanelPackage.Achivement.MyPlans_Achivement;
-import PerformancePanelPackage.Quality.MyPlane_QualityPanel;
-import javax.swing.border.LineBorder;
-import java.awt.Color;
 
 @SuppressWarnings("serial")
 public class MyPlans extends JPanel {
@@ -28,9 +21,9 @@ public class MyPlans extends JPanel {
 	public MyPlans() {
 		
 		insertinfo = new Insertinfo_myPlans();
-		insertinfo.setBorder(new LineBorder(Color.GRAY, 3, true));
+		insertinfo.setBorder(new MatteBorder(1,0,0,0,(new Color(148,148,148))));
 		myPlans_Tabbedpane = new MyPlans_TabbedPane();
-		myPlans_Tabbedpane.setBorder(new LineBorder(Color.GRAY, 3, true));
+		myPlans_Tabbedpane.setBorder(null);
 		
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[]{0, 0, 0, 0};

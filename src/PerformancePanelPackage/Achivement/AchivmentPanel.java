@@ -79,7 +79,7 @@ public class AchivmentPanel extends JPanel{
 		
 		//add data panel
 		GridBagConstraints gbc_panel = new GridBagConstraints();
-		gbc_panel.anchor = GridBagConstraints.WEST;
+		gbc_panel.fill = GridBagConstraints.HORIZONTAL;
 		gbc_panel.insets = new Insets(0, 0, 5, 5);
 		gbc_panel.gridx = 2;
 		gbc_panel.gridy = 4;
