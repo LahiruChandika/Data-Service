@@ -75,17 +75,9 @@ public class DashbordAIP {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(new BorderLayout(0, 0));
 		
-		//Add Navigation panel
-//		JPanel panel = new JPanel();
-//		frame.getContentPane().add(panel, BorderLayout.WEST);
-//		panel.setLayout(new BorderLayout(0, 0));
-//		panel.add((Component)navBar);
-		
 		mainPanel = new JPanel();
 		frame.getContentPane().add(mainPanel, BorderLayout.CENTER);
 		mainPanel.setLayout(new BorderLayout(0, 0));
-		
-		
 		
 		headerPanel = new JPanel();
 		mainPanel.add(headerPanel, BorderLayout.NORTH);
@@ -100,24 +92,25 @@ public class DashbordAIP {
 		GridBagLayout gridBagLayout = (GridBagLayout) labelIcon.getLayout();
 		gridBagLayout.rowWeights = new double[]{1.0};
 		gridBagLayout.columnWeights = new double[]{1.0};
-		SettingPanel st = new SettingPanel();
-		headerPanel.add(st);
-		st.hide();
-		labelIcon.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent arg0) {
-				if (st.isVisible()) {
-					st.hide();
-					frame.repaint();
-				}else {
-					st.show();
-					frame.repaint();
-				}
-			
-			}
-		});
-		headerPanel.add(labelIcon);
 		
+		//setting popup panel
+//		SettingPanel st = new SettingPanel();
+//		headerPanel.add(st);
+//		st.hide();
+//		labelIcon.addMouseListener(new MouseAdapter() {
+//			@Override
+//			public void mouseClicked(MouseEvent arg0) {
+//				if (st.isVisible()) {
+//					st.hide();
+//					frame.repaint();
+//				}else {
+//					st.show();
+//					frame.repaint();
+//				}
+//			}
+//		});
+		
+		headerPanel.add(labelIcon);
 		
 		//User icon
 		Icon iconAcc = IconFontSwing.buildIcon((IconCode)FontAwesome.USER, 30.0f, (new Color(148,148,148)));		
@@ -134,9 +127,6 @@ public class DashbordAIP {
 		tabbedPane.addTab("Directories", null, directoriesPanel, null);
 		//add Performance panel to tabbed pane
 		tabbedPane.addTab("Performance", null, performancePanel, null);
-		
-		
-	
-		
+				
 	}
 }
