@@ -59,7 +59,6 @@ public class DashbordAIP {
 		
 		//header panel	
 		mainPanel.add(headerPanel, BorderLayout.NORTH);
-			
 		
 		//add tabbed pane
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
@@ -69,28 +68,7 @@ public class DashbordAIP {
 		tabbedPane.setFont(new Font("Tahoma", Font.BOLD, 16));
 		tabbedPane.addTab("Directories", null, directoriesPanel, null);
 		//add Performance panel to tabbed pane
-		tabbedPane.addTab("Performance", null, performancePanel, null);
-				
+		tabbedPane.addTab("Performance", null, performancePanel, null);			
 	}
 	
-	public static void changeLaf(final JFrame frame, final String laf) {
-        if (laf.equals("Dark")) {
-            try {
-                UIManager.setLookAndFeel((LookAndFeel)new FlatDarkLaf());
-            }
-            catch (Exception e) {
-                System.err.println("Failed to initialize LaF");
-            }
-        }
-        if (laf.equals("Light")) {
-            try {
-                UIManager.setLookAndFeel((LookAndFeel)new FlatLightLaf());
-            }
-            catch (Exception e) {
-                System.err.println("Failed to initialize LaF");
-            }
-        }
-        SwingUtilities.updateComponentTreeUI(frame);
-    }
-
 }

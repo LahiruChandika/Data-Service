@@ -52,8 +52,7 @@ public class LabelIcon extends JPanel {
 		springLayout.putConstraint(SpringLayout.EAST, lblIcon, -10, SpringLayout.EAST, this);
 		lblIcon.setVerticalAlignment(SwingConstants.BOTTOM);
 		lblIcon.setHorizontalAlignment(SwingConstants.LEFT);
-		add(lblIcon);
-		
+		add(lblIcon);	
 	}
 	
 	public LabelIcon (String name , Component com) {
@@ -72,7 +71,6 @@ public class LabelIcon extends JPanel {
 		gbc_lblNewLabel_1.insets = new Insets (5,5,5,5);
 		gbc_lblNewLabel_1.gridx = 1;
 		gbc_lblNewLabel_1.gridy = 0;
-		add(cpn, gbc_lblNewLabel_1);
-		
+		add(cpn, gbc_lblNewLabel_1);	
 	}
 }
