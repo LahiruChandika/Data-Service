@@ -8,7 +8,6 @@ import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import javax.swing.SwingConstants;
 
-import GUI_Performance.Data_Inserts.AchivmentDataPanel;
 import GUI_Utills.CustomPanel;
 
 import java.awt.Font;

@@ -10,7 +10,6 @@ import javax.swing.JPanel;
 import javax.swing.JSeparator;
 import javax.swing.SwingConstants;
 
-import GUI_Performance.Data_Inserts.WorktimeDataPanel;
 import GUI_Utills.CustomPanelQuality;
 
 @SuppressWarnings("serial")

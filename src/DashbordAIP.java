@@ -18,7 +18,6 @@ import GUI_Performance.PerformancePanel;
 public class DashbordAIP {
 
 	private JFrame frame;
-//	private NavBar navBar;
 	private JPanel mainPanel;
 	private Header headerPanel;
 	private DirectoriesPanel directoriesPanel;

@@ -12,8 +12,7 @@ import javax.swing.JPanel;
 import javax.swing.JSeparator;
 import javax.swing.SwingConstants;
 
-import GUI_Performance.Data_Inserts.AchivmentDataPanel;
-import GUI_Performance.Data_Inserts.TargetAchivementDataPanel;
+import GUI_Performance.Dashboard.AchivmentDataPanel;
 
 @SuppressWarnings("serial")
 public class MyPlans_Achivement extends JPanel {

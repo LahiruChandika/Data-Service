@@ -1,4 +1,4 @@
-package GUI_Performance.Data_Inserts;
+package GUI_Performance.My_Plans;
 
 import javax.swing.JPanel;
 import java.awt.GridBagLayout;
