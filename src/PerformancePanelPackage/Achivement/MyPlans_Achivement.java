@@ -93,11 +93,13 @@ public class MyPlans_Achivement extends JPanel {
 		add(comboBox, gbc_comboBox);
 		
 		GridBagConstraints gbc_panel_1 = new GridBagConstraints();
+		gbc_panel_1.anchor = GridBagConstraints.NORTH;
 		gbc_panel_1.insets = new Insets(0, 0, 0, 5);
 		gbc_panel_1.gridx = 2;
 		gbc_panel_1.gridy = 4;
 		add(dataPanelTarget, gbc_panel_1);
 		GridBagConstraints gbc_panel = new GridBagConstraints();
+		gbc_panel.anchor = GridBagConstraints.NORTH;
 		gbc_panel.insets = new Insets(0, 0, 0, 5);
 		gbc_panel.gridx = 5;
 		gbc_panel.gridy = 4;

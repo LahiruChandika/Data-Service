@@ -19,12 +19,9 @@ import java.awt.Dimension;
 import java.awt.Color;
 
 public class Layyerd {
-
 	private JFrame frame;
 
-	/**
-	 * Launch the application.
-	 */
+	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -38,16 +35,10 @@ public class Layyerd {
 		});
 	}
 
-	/**
-	 * Create the application.
-	 */
 	public Layyerd() {
 		initialize();
 	}
 
-	/**
-	 * Initialize the contents of the frame.
-	 */
 	private void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 564, 439);
@@ -79,7 +70,6 @@ public class Layyerd {
 		panel_1.setBounds(410, 13, 82, 54);
 		panel.add(panel_1);
 		
-		
 		IconFontSwing.register(FontAwesome.getIconFont());
 		
 		//Notification icon
@@ -95,14 +85,9 @@ public class Layyerd {
 				}else {
 					settingPanel.show();
 				}
-			
 			}
 		});
-		
 		panel_1.add(labelIcon);
-		
-		
-		
 	}
 }
 

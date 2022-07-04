@@ -136,7 +136,7 @@ public class QualityDataPanel extends JPanel {
 		
 		JLabel lblNewLabel_4 = new JLabel("Not Eligible");
 		lblNewLabel_4.setForeground(Color.RED);
-		lblNewLabel_4.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		lblNewLabel_4.setFont(new Font("Tahoma", Font.BOLD, 16));
 		GridBagConstraints gbc_lblNewLabel_4 = new GridBagConstraints();
 		gbc_lblNewLabel_4.anchor = GridBagConstraints.WEST;
 		gbc_lblNewLabel_4.insets = new Insets(0, 0, 5, 0);

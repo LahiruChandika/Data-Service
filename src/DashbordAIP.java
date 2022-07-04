@@ -31,6 +31,9 @@ import javax.swing.JMenuItem;
 import javax.swing.JLayeredPane;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class DashbordAIP {
 
@@ -44,6 +47,7 @@ public class DashbordAIP {
 	private JPopupMenu popupMenu;
 	private JMenuItem mntmNewMenuItem;
 	private JPanel footer;
+	private JButton btnNewButton;
 	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -71,7 +75,7 @@ public class DashbordAIP {
 	private void initialize() {
 		
 		frame = new JFrame();
-		frame.setBounds(100, 100, 846, 555);
+		frame.setBounds(100, 100, 1010, 579);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(new BorderLayout(0, 0));
 		
@@ -79,6 +83,7 @@ public class DashbordAIP {
 		frame.getContentPane().add(mainPanel, BorderLayout.CENTER);
 		mainPanel.setLayout(new BorderLayout(0, 0));
 		
+		//header panel
 		headerPanel = new JPanel();
 		mainPanel.add(headerPanel, BorderLayout.NORTH);
 			
@@ -87,30 +92,34 @@ public class DashbordAIP {
 		IconFontSwing.register(FontAwesome.getIconFont());
 
 		//Notification icon
-		Icon iconNottification = IconFontSwing.buildIcon((IconCode)FontAwesome.COG, 30.0f, (new Color(148,148,148)));
-		LabelIcon labelIcon = new LabelIcon(iconNottification);
-		GridBagLayout gridBagLayout = (GridBagLayout) labelIcon.getLayout();
-		gridBagLayout.rowWeights = new double[]{1.0};
-		gridBagLayout.columnWeights = new double[]{1.0};
+		Icon iconNottification = IconFontSwing.buildIcon((IconCode)FontAwesome.COG, 30.0f, (new Color(148,148,148)));	
+		Icon iconSignOut= IconFontSwing.buildIcon((IconCode)FontAwesome.SIGN_OUT, 30.0f, (new Color(148,148,148)));
+		JPopupMenu popUp = new JPopupMenu();
+		popUp.setSize(150, 400);
+		switchbutton = new SwitchButton();
+		popUp.add(new LabelIcon("Change Theme", switchbutton));
+		popUp.add(new LabelIcon("Log Out" ,iconSignOut));
 		
-		//setting popup panel
-//		SettingPanel st = new SettingPanel();
-//		headerPanel.add(st);
-//		st.hide();
-//		labelIcon.addMouseListener(new MouseAdapter() {
-//			@Override
-//			public void mouseClicked(MouseEvent arg0) {
-//				if (st.isVisible()) {
-//					st.hide();
-//					frame.repaint();
-//				}else {
-//					st.show();
-//					frame.repaint();
-//				}
-//			}
-//		});
+		switchbutton.addEventSelected(new EventSwitchSelected() {
+            @Override
+            public void onSelected(boolean selected) {
+                if (selected) {
+                	changeLaf(frame, "Light");
+                } else {
+                	changeLaf(frame, "Dark");
+                }
+            }
+        });
 		
-		headerPanel.add(labelIcon);
+		btnNewButton = new JButton(iconNottification);
+		btnNewButton.setContentAreaFilled(false);
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				popUp.show(btnNewButton,0,btnNewButton.getHeight());
+			}
+		});
+		headerPanel.add(btnNewButton);
+		
 		
 		//User icon
 		Icon iconAcc = IconFontSwing.buildIcon((IconCode)FontAwesome.USER, 30.0f, (new Color(148,148,148)));		
@@ -129,4 +138,25 @@ public class DashbordAIP {
 		tabbedPane.addTab("Performance", null, performancePanel, null);
 				
 	}
+	
+	public static void changeLaf(final JFrame frame, final String laf) {
+        if (laf.equals("Dark")) {
+            try {
+                UIManager.setLookAndFeel((LookAndFeel)new FlatDarkLaf());
+            }
+            catch (Exception e) {
+                System.err.println("Failed to initialize LaF");
+            }
+        }
+        if (laf.equals("Light")) {
+            try {
+                UIManager.setLookAndFeel((LookAndFeel)new FlatLightLaf());
+            }
+            catch (Exception e) {
+                System.err.println("Failed to initialize LaF");
+            }
+        }
+        SwingUtilities.updateComponentTreeUI(frame);
+    }
+
 }

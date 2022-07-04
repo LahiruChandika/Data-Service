@@ -69,7 +69,7 @@ public class QualityPanel extends JPanel {
 		
 		//Add Circle bar Progressbar
 		GridBagConstraints gbc_panel_1 = new GridBagConstraints();
-		gbc_panel_1.insets = new Insets(0, 25, 5, 5);
+		gbc_panel_1.insets = new Insets(0, 30, 5, 5);
 		gbc_panel_1.fill = GridBagConstraints.BOTH;
 		gbc_panel_1.gridx = 1;
 		gbc_panel_1.gridy = 4;
