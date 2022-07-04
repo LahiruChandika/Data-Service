@@ -2,6 +2,7 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.io.IOException;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -12,6 +13,8 @@ import javax.swing.UIManager;
 
 import com.formdev.flatlaf.FlatDarkLaf;
 import com.formdev.flatlaf.FlatLightLaf;
+import com.google.gson.JsonIOException;
+import com.google.gson.JsonSyntaxException;
 
 import GUI_Performance.PerformancePanel;
 
@@ -38,7 +41,7 @@ public class DashbordAIP {
 		});
 	}
 
-	public DashbordAIP() {
+	public DashbordAIP() throws JsonSyntaxException, JsonIOException, IOException {
 		directoriesPanel = new DirectoriesPanel();
 		performancePanel = new PerformancePanel();
 		headerPanel = new Header();

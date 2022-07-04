@@ -9,6 +9,7 @@ import java.awt.Insets;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
+import java.io.IOException;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -19,6 +20,10 @@ import javax.swing.JTabbedPane;
 import javax.swing.SwingConstants;
 import javax.swing.UIManager;
 
+import com.google.gson.JsonIOException;
+import com.google.gson.JsonSyntaxException;
+
+import GUI_Performance.History.HistoryPanel;
 import jiconfont.IconCode;
 import jiconfont.icons.font_awesome.FontAwesome;
 import jiconfont.swing.IconFontSwing;
@@ -30,7 +35,7 @@ public class PerformancePanel extends JPanel {
 	private MyPlans myPlans;
 	private HistoryPanel historyPanel;
 
-	public PerformancePanel() {	
+	public PerformancePanel() throws JsonSyntaxException, JsonIOException, IOException {	
 		
 		dashboardPanel = new DashboardPanel();
 		historyPanel = new HistoryPanel();
