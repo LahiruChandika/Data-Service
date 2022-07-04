@@ -34,9 +34,9 @@ public class HistoryPanel extends JPanel {
 	public HistoryPanel() throws JsonSyntaxException, JsonIOException, IOException {
 		
 		GridBagLayout gridBagLayout = new GridBagLayout();
-		gridBagLayout.columnWidths = new int[]{0, 0, 0, 0, 0, 0, 0};
+		gridBagLayout.columnWidths = new int[]{0, 0, 0, 0, 0, 0, 0, 0};
 		gridBagLayout.rowHeights = new int[]{0, 0, 0, 0, 0, 0};
-		gridBagLayout.columnWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 1.0, Double.MIN_VALUE};
+		gridBagLayout.columnWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, Double.MIN_VALUE};
 		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 1.0, Double.MIN_VALUE};
 		setLayout(gridBagLayout);	
 		
@@ -54,47 +54,47 @@ public class HistoryPanel extends JPanel {
 		btnApply.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		GridBagConstraints gbc_btnApply = new GridBagConstraints();
 		gbc_btnApply.anchor = GridBagConstraints.WEST;
-		gbc_btnApply.insets = new Insets(5, 10, 5, 5);
-		gbc_btnApply.gridx = 1;
-		gbc_btnApply.gridy = 2;
+		gbc_btnApply.insets = new Insets(10, 10, 5, 5);
+		gbc_btnApply.gridx = 5;
+		gbc_btnApply.gridy = 1;
 		add(btnApply, gbc_btnApply);
-		
-		JButton btnClear = new JButton("Clear");
-		btnClear.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		GridBagConstraints gbc_btnClear = new GridBagConstraints();
-		gbc_btnClear.insets = new Insets(0, 0, 5, 5);
-		gbc_btnClear.anchor = GridBagConstraints.WEST;
-		gbc_btnClear.gridx = 4;
-		gbc_btnClear.gridy = 2;
-		add(btnClear, gbc_btnClear);
 		
 		JDateChooser dateChooser = new JDateChooser();
 		dateChooser.getCalendarButton().setPreferredSize(new Dimension(28, 30));
-		dateChooser.setPreferredSize(new Dimension(150, 30));
+		dateChooser.setPreferredSize(new Dimension(200, 30));
 		dateChooser.setFont(new Font("Times New Roman", Font.PLAIN, 18));
 		dateChooser.setToolTipText("MMM d, yyyy");
 		GridBagConstraints gbc_dateChooser = new GridBagConstraints();
-		gbc_dateChooser.anchor = GridBagConstraints.WEST;
+		gbc_dateChooser.fill = GridBagConstraints.HORIZONTAL;
 		gbc_dateChooser.insets = new Insets(10, 10, 5, 5);
 		gbc_dateChooser.gridx = 1;
 		gbc_dateChooser.gridy = 1;
 		add(dateChooser, gbc_dateChooser);
 		
 		JDateChooser dateChooser_1 = new JDateChooser();
-		dateChooser_1.setPreferredSize(new Dimension(150, 30));
+		dateChooser_1.setPreferredSize(new Dimension(200, 30));
 		dateChooser_1.getCalendarButton().setPreferredSize(new Dimension(27, 30));
 		dateChooser_1.setFont(new Font("Times New Roman", Font.PLAIN, 18));
 		dateChooser_1.setToolTipText("MMM d, yyyy");
 		GridBagConstraints gbc_dateChooser_1 = new GridBagConstraints();
-		gbc_dateChooser_1.anchor = GridBagConstraints.WEST;
-		gbc_dateChooser_1.insets = new Insets(10, 5, 5, 5);
+		gbc_dateChooser_1.fill = GridBagConstraints.HORIZONTAL;
+		gbc_dateChooser_1.insets = new Insets(10, 10, 5, 5);
 		gbc_dateChooser_1.gridx = 4;
 		gbc_dateChooser_1.gridy = 1;
 		add(dateChooser_1, gbc_dateChooser_1);
 		
+		JButton btnClear = new JButton("Clear");
+		btnClear.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		GridBagConstraints gbc_btnClear = new GridBagConstraints();
+		gbc_btnClear.insets = new Insets(10, 10, 5, 0);
+		gbc_btnClear.anchor = GridBagConstraints.WEST;
+		gbc_btnClear.gridx = 6;
+		gbc_btnClear.gridy = 1;
+		add(btnClear, gbc_btnClear);
+		
 		JPanel panel = new JPanel();
 		GridBagConstraints gbc_panel = new GridBagConstraints();
-		gbc_panel.gridwidth = 5;
+		gbc_panel.gridwidth = 6;
 		gbc_panel.fill = GridBagConstraints.BOTH;
 		gbc_panel.gridx = 1;
 		gbc_panel.gridy = 4;
