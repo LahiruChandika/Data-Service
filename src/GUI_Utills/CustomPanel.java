@@ -20,7 +20,7 @@ public class CustomPanel extends JPanel {
 	public CustomPanel() {
 	}
 	
-	int progress = 78;
+	int progress = 258;
 	int value = 0;
 	Arc2D.Float arc;
 	int progress1=0;

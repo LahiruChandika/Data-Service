@@ -10,5 +10,7 @@
 	<classpathentry kind="lib" path="lib/flatlaf-2.0.1.jar"/>
 	<classpathentry kind="lib" path="lib/flatlaf-extras-1.2.jar"/>
 	<classpathentry kind="lib" path="lib/jcalendar-1.4.jar"/>
+	<classpathentry kind="lib" path="lib/jcommon-1.0.23.jar"/>
+	<classpathentry kind="lib" path="lib/gson-2.2.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

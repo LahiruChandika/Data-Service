@@ -34,32 +34,37 @@ public class HistoryPanel extends JPanel {
 	public HistoryPanel() throws JsonSyntaxException, JsonIOException, IOException {
 		
 		GridBagLayout gridBagLayout = new GridBagLayout();
-		gridBagLayout.columnWidths = new int[]{0, 0, 0, 0, 0, 0, 0, 0};
-		gridBagLayout.rowHeights = new int[]{0, 0, 0, 0, 0, 0};
-		gridBagLayout.columnWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, Double.MIN_VALUE};
-		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 1.0, Double.MIN_VALUE};
+		gridBagLayout.columnWidths = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+		gridBagLayout.rowHeights = new int[]{0, 0, 0, 0};
+		gridBagLayout.columnWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, Double.MIN_VALUE};
+		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 1.0, Double.MIN_VALUE};
 		setLayout(gridBagLayout);	
 		
 		JSeparator separator = new JSeparator();
 		separator.setPreferredSize(new Dimension(10, 2));
 		separator.setOrientation(SwingConstants.VERTICAL);
 		GridBagConstraints gbc_separator = new GridBagConstraints();
-		gbc_separator.gridheight = 4;
+		gbc_separator.gridheight = 2;
 		gbc_separator.insets = new Insets(0, 0, 5, 5);
 		gbc_separator.gridx = 0;
 		gbc_separator.gridy = 0;
 		add(separator, gbc_separator);
 		
-		JButton btnApply = new JButton("Apply");
-		btnApply.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		GridBagConstraints gbc_btnApply = new GridBagConstraints();
-		gbc_btnApply.anchor = GridBagConstraints.WEST;
-		gbc_btnApply.insets = new Insets(10, 10, 5, 5);
-		gbc_btnApply.gridx = 5;
-		gbc_btnApply.gridy = 1;
-		add(btnApply, gbc_btnApply);
+		JDateChooser dateChooser_1 = new JDateChooser();
+		dateChooser_1.setMinimumSize(new Dimension(150, 30));
+		dateChooser_1.setPreferredSize(new Dimension(200, 30));
+		dateChooser_1.getCalendarButton().setPreferredSize(new Dimension(27, 30));
+		dateChooser_1.setFont(new Font("Times New Roman", Font.PLAIN, 18));
+		dateChooser_1.setToolTipText("MMM d, yyyy");
+		GridBagConstraints gbc_dateChooser_1 = new GridBagConstraints();
+		gbc_dateChooser_1.fill = GridBagConstraints.HORIZONTAL;
+		gbc_dateChooser_1.insets = new Insets(10, 10, 5, 5);
+		gbc_dateChooser_1.gridx = 3;
+		gbc_dateChooser_1.gridy = 1;
+		add(dateChooser_1, gbc_dateChooser_1);
 		
 		JDateChooser dateChooser = new JDateChooser();
+		dateChooser.setMinimumSize(new Dimension(150, 30));
 		dateChooser.getCalendarButton().setPreferredSize(new Dimension(28, 30));
 		dateChooser.setPreferredSize(new Dimension(200, 30));
 		dateChooser.setFont(new Font("Times New Roman", Font.PLAIN, 18));
@@ -71,33 +76,31 @@ public class HistoryPanel extends JPanel {
 		gbc_dateChooser.gridy = 1;
 		add(dateChooser, gbc_dateChooser);
 		
-		JDateChooser dateChooser_1 = new JDateChooser();
-		dateChooser_1.setPreferredSize(new Dimension(200, 30));
-		dateChooser_1.getCalendarButton().setPreferredSize(new Dimension(27, 30));
-		dateChooser_1.setFont(new Font("Times New Roman", Font.PLAIN, 18));
-		dateChooser_1.setToolTipText("MMM d, yyyy");
-		GridBagConstraints gbc_dateChooser_1 = new GridBagConstraints();
-		gbc_dateChooser_1.fill = GridBagConstraints.HORIZONTAL;
-		gbc_dateChooser_1.insets = new Insets(10, 10, 5, 5);
-		gbc_dateChooser_1.gridx = 4;
-		gbc_dateChooser_1.gridy = 1;
-		add(dateChooser_1, gbc_dateChooser_1);
+		JButton btnApply = new JButton("Apply");
+		btnApply.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		GridBagConstraints gbc_btnApply = new GridBagConstraints();
+		gbc_btnApply.anchor = GridBagConstraints.WEST;
+		gbc_btnApply.insets = new Insets(10, 10, 5, 5);
+		gbc_btnApply.gridx = 5;
+		gbc_btnApply.gridy = 1;
+		add(btnApply, gbc_btnApply);
 		
 		JButton btnClear = new JButton("Clear");
 		btnClear.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		GridBagConstraints gbc_btnClear = new GridBagConstraints();
-		gbc_btnClear.insets = new Insets(10, 10, 5, 0);
+		gbc_btnClear.insets = new Insets(10, 10, 5, 5);
 		gbc_btnClear.anchor = GridBagConstraints.WEST;
-		gbc_btnClear.gridx = 6;
+		gbc_btnClear.gridx = 7;
 		gbc_btnClear.gridy = 1;
 		add(btnClear, gbc_btnClear);
 		
 		JPanel panel = new JPanel();
 		GridBagConstraints gbc_panel = new GridBagConstraints();
-		gbc_panel.gridwidth = 6;
+		gbc_panel.insets = new Insets(5, 10, 10, 10);
+		gbc_panel.gridwidth = 8;
 		gbc_panel.fill = GridBagConstraints.BOTH;
 		gbc_panel.gridx = 1;
-		gbc_panel.gridy = 4;
+		gbc_panel.gridy = 2;
 		add(panel, gbc_panel);
 		panel.setLayout(new BorderLayout(0, 0));
 		

@@ -2,7 +2,6 @@ package GUI_Performance.History;
 
 import java.awt.BasicStroke;
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.io.IOException;
@@ -25,8 +24,6 @@ public class Graph extends JPanel
 {
     private static final long serialVersionUID = 1L;
     
-    
-    
     public Graph() throws JsonSyntaxException, JsonIOException, IOException {
         final JPanel chartPanel = this.createChartPanel();
         chartPanel.setMinimumSize(new Dimension(200, 200));
@@ -44,21 +41,18 @@ public class Graph extends JPanel
         plot.getRenderer().setSeriesStroke(1, new BasicStroke(2.0f));
         
         CategoryAxis domainAxis = ((CategoryPlot) chart.getPlot()).getDomainAxis();
-//        domainAxis.setVerticalTickLabels(true);
         domainAxis.setCategoryLabelPositions(CategoryLabelPositions.UP_45);
         domainAxis.setLabelFont(new Font("TimesNewRoman",Font.PLAIN, 16));
-      
-        
+           
         ChartPanel cp = new ChartPanel(chart);
         cp.setPreferredSize(new Dimension(600, 600));
-        
-        
+           
         //Change background colors in chart
         chart.setBackgroundPaint(new Color(146, 148, 150));
-        chart.getTitle().setPaint(new Color(255, 255, 255));
+        chart.getTitle().setPaint(new Color(0,0,0));
+        chart.getTitle().setFont(new Font("TimesNewRoman",Font.BOLD, 22));
         chart.getPlot().setBackgroundPaint(new Color(146, 148, 150));
-        
-        
+               
         return (JPanel)new ChartPanel(chart);
     }
     
@@ -69,7 +63,7 @@ public class Graph extends JPanel
             for (int j = 0; j < 30; ++j) {
                 final double val = (i == 0) ? tmpVal : (Math.random() * 1000.0);
 //                dataset = value , Comparablerow key (series) , Comparablecolumn key (x Axis)
-                dataset.addValue(val, (Comparable<?>)(String.valueOf(i) + " user"), (Comparable<?>)(String.valueOf(j + 1) + " / 05/ 2022"));
+                dataset.addValue(val, (Comparable<?>)(String.valueOf(i) + " user"), (Comparable<?>)(String.valueOf(j + 1) + "/05/2022"));
             }
         }
         return (CategoryDataset)dataset;
