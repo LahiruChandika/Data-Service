@@ -36,7 +36,7 @@ public class Insertinfo_myPlans extends JPanel {
 		
 		GridBagConstraints gbc_panel = new GridBagConstraints();
 		gbc_panel.fill = GridBagConstraints.HORIZONTAL;
-		gbc_panel.insets = new Insets(10, 5, 10, 10);
+		gbc_panel.insets = new Insets(10, 30, 10, 10);
 		gbc_panel.gridx = 3;
 		gbc_panel.gridy = 1;
 		add(daysPanel, gbc_panel);
