@@ -19,9 +19,9 @@ public class projectInfopanel_MyPlans extends JPanel {
 	
 	public projectInfopanel_MyPlans() {
 		GridBagLayout gridBagLayout = new GridBagLayout();
-		gridBagLayout.columnWidths = new int[]{0, 0, 0, 0, 0};
+		gridBagLayout.columnWidths = new int[]{0, 0, 0, 0};
 		gridBagLayout.rowHeights = new int[]{0, 0, 30, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-		gridBagLayout.columnWeights = new double[]{0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+		gridBagLayout.columnWeights = new double[]{0.0, 0.0, 0.0, Double.MIN_VALUE};
 		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		setLayout(gridBagLayout);
 		
@@ -47,7 +47,7 @@ public class projectInfopanel_MyPlans extends JPanel {
 		JSeparator separator_1 = new JSeparator();
 		GridBagConstraints gbc_separator_1 = new GridBagConstraints();
 		gbc_separator_1.gridheight = 10;
-		gbc_separator_1.gridx = 3;
+		gbc_separator_1.gridx = 2;
 		gbc_separator_1.gridy = 3;
 		add(separator_1, gbc_separator_1);
 		

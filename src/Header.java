@@ -1,5 +1,3 @@
-
-
 import javax.swing.Icon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -77,15 +75,12 @@ public class Header extends JPanel {
 		});
 		headerPanel.add(btnNewButton);
 		
-		
 		//User icon
 		Icon iconAcc = IconFontSwing.buildIcon((IconCode)FontAwesome.USER, 30.0f, (new Color(148,148,148)));		
 		//add account icon and name
 		LabelIcon labelIcon_1 = new LabelIcon("username", iconAcc);
 		headerPanel.add(labelIcon_1);
-
-		
-		
+	
 	}
 	
 	public static void changeLaf(final JFrame frame, final String laf) {

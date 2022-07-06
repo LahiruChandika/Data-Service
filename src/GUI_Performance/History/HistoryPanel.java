@@ -96,7 +96,7 @@ public class HistoryPanel extends JPanel {
 		
 		JPanel panel = new JPanel();
 		GridBagConstraints gbc_panel = new GridBagConstraints();
-		gbc_panel.insets = new Insets(5, 10, 10, 10);
+		gbc_panel.insets = new Insets(5, 10, 15, 15);
 		gbc_panel.gridwidth = 8;
 		gbc_panel.fill = GridBagConstraints.BOTH;
 		gbc_panel.gridx = 1;

@@ -28,13 +28,14 @@ public class Insertinfo_myPlans extends JPanel {
 		setLayout(gridBagLayout);
 		
 		GridBagConstraints gbc_panel_2 = new GridBagConstraints();
-		gbc_panel_2.insets = new Insets(10, 15, 10, 5);
+		gbc_panel_2.insets = new Insets(10, 0, 10, 10);
 		gbc_panel_2.gridx = 1;
 		gbc_panel_2.gridy = 1;
 		add(projectInfoPanel_Myplans, gbc_panel_2);
 		
 		
 		GridBagConstraints gbc_panel = new GridBagConstraints();
+		gbc_panel.fill = GridBagConstraints.HORIZONTAL;
 		gbc_panel.insets = new Insets(10, 5, 10, 10);
 		gbc_panel.gridx = 3;
 		gbc_panel.gridy = 1;
